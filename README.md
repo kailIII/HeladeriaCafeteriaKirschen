@@ -7,11 +7,13 @@ Sistema para la heladería-cafetería Kirschen que administra las ventas de sus 
 Para el desarrollo del sistema, se debe tener instalado:
   + Visual Studio 2015 Community Edition.
   + Cliente de Control de versiones GIT: [Link de descarga](https://git-scm.com/download/win).
-  + SQL Server 2014 (no es necesario todavía).
+  + SQL Server 2014 [Link de descarga](https://www.microsoft.com/en-US/download/details.aspx?id=42299).
+    + Click en Descargar.
+    + Seleccionar *Express* y *MgmtStudio*, la versión correspondiente (32 o 64 bits) y click en Siguiente.
 
 ## Instalacion local del proyecto
   + Crear una carpeta vacía donde se alojará el proyecto (preferentemente con nombre *HeladeriaCafeteriaKirschen*).
-  + Abrir la carpeta, botón derecho en algún lugar vacío dentro de la misma, y click en "Git Bash Here".
+  + Abrir la carpeta, botón derecho en algún lugar vacío dentro de la misma, y click en *Git Bash Here*.
   + Se debe clonar el repositorio. Cuando se abre la consola, ejecutar el comando:
     + ``` git clone https://github.com/SCandelieri/HeladeriaCafeteriaKirschen.git ```
   + Una vez clonado, abrir Visual Studio, e ir a **File -> Open -> Project/Solution...**
