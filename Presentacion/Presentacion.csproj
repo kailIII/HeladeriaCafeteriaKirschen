@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja\DepositoCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\DepositoCaja.Designer.cs">
+      <DependentUpon>DepositoCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\ExtraccionCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\ExtraccionCaja.Designer.cs">
+      <DependentUpon>ExtraccionCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\ListaMovimientosRango.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\ListaMovimientosRango.Designer.cs">
+      <DependentUpon>ListaMovimientosRango.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +72,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Caja\DepositoCaja.resx">
+      <DependentUpon>DepositoCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\ExtraccionCaja.resx">
+      <DependentUpon>ExtraccionCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\ListaMovimientosRango.resx">
+      <DependentUpon>ListaMovimientosRango.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
