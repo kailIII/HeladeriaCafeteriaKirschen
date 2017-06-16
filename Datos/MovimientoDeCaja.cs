@@ -8,11 +8,11 @@ namespace Datos
 {
     public class MovimientoDeCaja
     {
-        static List<Entidades.MovimientoDeCaja> List = new List<Entidades.MovimientoDeCaja>();
+        static List<Entidades.MovimientoDeCaja> Lista = new List<Entidades.MovimientoDeCaja>();
 
         public static void NuevoMovimiento(Entidades.MovimientoDeCaja movimiento)
         {
-            List.Add(movimiento);
+            Lista.Add(movimiento);
             Caja.EntidadesCaja.Monto += movimiento.Monto;
         }
 
@@ -28,15 +28,12 @@ namespace Datos
 
         public static List<Entidades.MovimientoDeCaja> Consultar(DateTime desde, DateTime hasta)
         {
-            var list = new List<Entidades.MovimientoDeCaja>();
-            foreach (var item in List)
-            {
-                if (desde <= item.FechaHora && item.FechaHora <= hasta)
-                {
-                    list.Add(item);
-                }
-            }
-            return list;
+            var query =
+                from item in Lista
+                where desde <= item.FechaHora && item.FechaHora <= hasta
+                select item;
+
+            return query.ToList();
         }
     }
 }
