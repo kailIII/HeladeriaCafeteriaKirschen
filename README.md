@@ -18,5 +18,10 @@ Para el desarrollo del sistema, se debe tener instalado:
     + ``` git clone https://github.com/SCandelieri/HeladeriaCafeteriaKirschen.git ```
   + Una vez clonado, abrir Visual Studio, e ir a **File -> Open -> Project/Solution...**
   + Se debe abrir la solución. Una solución de Visual Studio es un archivo de extensión .sln que se encarga de contener todos los proyectos y configuraciones. Elegir el archivo *HeladeriaCafeteriaKirschen.sln* ubicado en la carpeta raíz.
-  + Luego de abierta la solución, hacer click en **Start** (o **F5**).
+  + Una vez abierta la solución, abrir el archivo *.gitignore* ubicado en la carpeta *Solution Items*.
+  + Agregar la siguiente línea al archivo *.gitignore* y guardar los cambios:
+    + ``` Presentacion/App.config ```
+  + Abrir el archivo *App.config* ubicado en el proyecto *Presentacion* y en el elemento connectionStrings, cambiar el texto **WKS583L** por el nombre de su PC.
+  + Guardar los cambios.
+  + Hacer click en **Start** (o **F5**).
   + Una vez compilado, se debería ver en pantalla una ventana vacía, en blanco, con el nombre *Form1*.

@@ -15,33 +15,12 @@ namespace Presentacion.Caja
             InitializeComponent();
         }
 
-        protected override void RegistrarMovimiento(double monto, string razon)
-        {
-            var extraccion = new Entidades.MovimientoDeCaja
-            {
-                FechaHora = DateTime.Now,
-                Monto = -monto,
-                Razon = razon,
-                empleado = null, // TODO Eric: MovimientoDeCaja.empleado = null
-            };
+		protected override void GuardarMovimiento(Entidades.MovimientoDeCaja movimiento)
+		{
+			Logica.MovimientoDeCaja.NuevaExtraccion(movimiento);
+			MessageBox.Show(this, "La extraccion de caja se registró correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			this.Close();
+		}
 
-            try
-            {
-                Logica.MovimientoDeCaja.NuevaExtraccion(extraccion);
-                MessageBox.Show(this, "La extracción de caja se registró correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Close();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(
-                    this,
-                    "No se pudo realizar la extracción de caja: " + exception.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
-    }
+	}
 }

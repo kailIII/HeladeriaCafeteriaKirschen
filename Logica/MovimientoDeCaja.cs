@@ -19,15 +19,16 @@ namespace Logica
 
         public static void NuevaExtraccion(Entidades.MovimientoDeCaja extraccion)
         {
-            if (extraccion.Monto >= 0)
+            if (extraccion.Monto <= 0)
             {
-                throw new Exception("El monto de la extracción debe ser menor a 0");
+                throw new Exception("El monto de la extracción debe ser mayor a 0");
             }
-            if (Caja.Estado() + extraccion.Monto < 0)
+            if (Caja.Estado() - extraccion.Monto < 0)
             {
                 throw new Exception(string.Format("El monto de la extracción supera el monto en la caja ({0:C})", Caja.Estado()));
             }
-            Datos.MovimientoDeCaja.NuevaExtraccion(extraccion);
+			extraccion.Monto = -extraccion.Monto;
+			Datos.MovimientoDeCaja.NuevaExtraccion(extraccion);
         }
 
         public static List<Entidades.MovimientoDeCaja> Consultar(DateTime desde, DateTime hasta)

@@ -8,11 +8,13 @@ namespace Datos
 {
     public class MovimientoDeCaja
     {
-        static List<Entidades.MovimientoDeCaja> Lista = new List<Entidades.MovimientoDeCaja>();
+		private static DBHeladeria dbHeladeria = new DBHeladeria();
 
         public static void NuevoMovimiento(Entidades.MovimientoDeCaja movimiento)
         {
-            Lista.Add(movimiento);
+			/*TODO: Eliminar linea*/movimiento.Usuario = (dbHeladeria.Usuario.Find("Santiago") != null) ? dbHeladeria.Usuario.Find("Santiago") : new Entidades.Usuario { NombreUsuario = "Santiago", Contrasenia = "Contr", Rol = Entidades.TipoUsuario.Supervisor };
+			dbHeladeria.MovimientoDeCaja.Add(movimiento);
+			dbHeladeria.SaveChanges();
             Caja.EntidadesCaja.Monto += movimiento.Monto;
         }
 
@@ -29,10 +31,9 @@ namespace Datos
         public static List<Entidades.MovimientoDeCaja> Consultar(DateTime desde, DateTime hasta)
         {
             var query =
-                from item in Lista
+                from item in dbHeladeria.MovimientoDeCaja
                 where desde <= item.FechaHora && item.FechaHora <= hasta
                 select item;
-
             return query.ToList();
         }
     }

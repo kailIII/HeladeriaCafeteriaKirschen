@@ -17,35 +17,39 @@ namespace Presentacion.Caja
             InitializeComponent();
         }
 
-        protected virtual void RegistrarMovimiento(double monto, string razon)
-        {
-            var deposito = new Entidades.MovimientoDeCaja
-            {
-                FechaHora = DateTime.Now,
-                Monto = monto,
-                Razon = TxtRazon.Text,
-                empleado = null, // TODO Eric: MovimientoDeCaja.empleado = null
-            };
+		protected virtual void GuardarMovimiento (Entidades.MovimientoDeCaja movimiento)
+		{
+			Logica.MovimientoDeCaja.NuevoDeposito(movimiento);
+			MessageBox.Show(this, "El deposito de caja se registró correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			this.Close();
+		}
 
-            try
-            {
-                Logica.MovimientoDeCaja.NuevoDeposito(deposito);
-                MessageBox.Show(this, "El deposito de caja se registró correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		protected void RegistrarMovimiento(double monto, string razon, Entidades.Usuario usuario)
+		{
+			var movimiento = new Entidades.MovimientoDeCaja
+			{
+				FechaHora = DateTime.Now,
+				Monto = monto,
+				Razon = razon,
+				Usuario = usuario
+			};
 
-                Close();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(
-                    this,
-                    "No se pudo realizar el deposito de caja: " + exception.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
+			try
+			{
+				GuardarMovimiento(movimiento);
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show(
+					this,
+					"No se pudo realizar el movimiento de caja: " + exception.Message,
+					"Error",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+			}
+		}
 
-        private void BtnAceptar_Click(object sender, EventArgs e)
+		private void BtnAceptar_Click(object sender, EventArgs e)
         {
             if (NumMonto.Value <= 0)
             {
@@ -59,8 +63,8 @@ namespace Presentacion.Caja
                 return;
             }
 
-            RegistrarMovimiento((double)NumMonto.Value, TxtRazon.Text);
-        }
+            RegistrarMovimiento((double)NumMonto.Value, TxtRazon.Text, null); // TODO: Registrar empleado.
+		}
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
