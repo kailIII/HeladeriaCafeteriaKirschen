@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Caja.cs" />
     <Compile Include="DBHeladeria.cs" />
+    <Compile Include="DBHeladeriaInitializer.cs" />
     <Compile Include="MovimientoDeCaja.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />

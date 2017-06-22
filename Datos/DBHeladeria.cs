@@ -24,6 +24,7 @@ namespace Datos
 		{
 			base.OnModelCreating(modelBuilder);
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+			Database.SetInitializer<DBHeladeria>(new DBHeladeriaInitializer());
 		}
 
 		private static DBHeladeria instance;
