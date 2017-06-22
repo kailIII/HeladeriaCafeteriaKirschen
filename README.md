@@ -24,7 +24,7 @@ Para el desarrollo del sistema, se debe tener instalado:
   + Una vez abierta la solución, abrir el archivo *.gitignore* ubicado en la carpeta *Solution Items*.
   + Agregar la siguiente línea al archivo *.gitignore* y guardar los cambios:
     + ``` Presentacion/App.config ```
-  + Abrir el archivo *App.config* ubicado en el proyecto *Presentacion* y en el elemento connectionStrings, cambiar el texto **WKS583L** por el nombre de su PC.
+  + Abrir el archivo *App.config* ubicado en el proyecto *Presentacion* y en el elemento connectionStrings, cambiar el texto **DESKTOP-RACRGHP** por el nombre de su PC.
   + Guardar los cambios.
   + Ejecutar el siguiente comando en *Git Bash*:
 	+ ``` git rm -r --cached . ```
