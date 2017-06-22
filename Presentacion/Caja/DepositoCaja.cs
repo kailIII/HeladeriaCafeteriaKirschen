@@ -63,7 +63,7 @@ namespace Presentacion.Caja
                 return;
             }
 
-            RegistrarMovimiento((double)NumMonto.Value, TxtRazon.Text, null); // TODO: Registrar empleado.
+            RegistrarMovimiento((double)NumMonto.Value, TxtRazon.Text, Logica.Usuario.GetUsuarioActual());
 		}
 
         private void BtnCancelar_Click(object sender, EventArgs e)

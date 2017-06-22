@@ -15,6 +15,7 @@ namespace Presentacion
 		public MenuPrincipal()
 		{
 			InitializeComponent();
+			CheckLogIn();
 		}
 
 		private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -51,5 +52,57 @@ namespace Presentacion
             TxtEstadoDeCaja.Text = string.Format("{0:C}", estado);
             PnlAlerta.Visible = Logica.Caja.DebeEmitirAlerta();
         }
-    }
+
+		private void btnLogIn_Click(object sender, EventArgs e)
+		{
+			Usuario.LogInUsuario logInForm = new Usuario.LogInUsuario();
+			ShowNewForm(logInForm);
+			CheckLogIn();
+		}
+
+		private void btnLogOut_Click(object sender, EventArgs e)
+		{
+			Logica.Usuario.LogOut();
+			CheckLogIn();
+		}
+
+		private void CheckLogIn()
+		{
+			if (Logica.Usuario.UsuarioActualEstaLogueado())
+			{
+				btnLogIn.Enabled = false;
+				btnLogOut.Enabled = true;
+				lblNombreUsuario.Visible = true;
+				lblNombreUsuario.Text = Logica.Usuario.GetUsuarioActual().NombreUsuario;
+			}
+			else
+			{
+				btnLogIn.Enabled = true;
+				btnLogOut.Enabled = false;
+				lblNombreUsuario.Visible = false;
+			}
+			if (Logica.Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
+			{
+				btnNuevoUsuario.Visible = true;
+				btnUsuarios.Visible = true;
+				btnUsuarios.Visible = true;
+			}
+			else
+			{
+				btnNuevoUsuario.Visible = false;
+				btnNuevoUsuario.Visible = false;
+				btnUsuarios.Visible = false;
+			}
+		}
+
+		private void btnNuevoUsuario_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Usuario.AltaUsuario());
+		}
+
+		private void btnUsuarios_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Usuario.ListaUsuarios());
+		}
+	}
 }

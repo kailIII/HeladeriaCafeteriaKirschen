@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class Caja
+    public static class Caja
     {
         public static double Estado()
         {

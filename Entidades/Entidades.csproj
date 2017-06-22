@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caja.cs" />
+    <Compile Include="Exceptions\ProhibidoException.cs" />
+    <Compile Include="Exceptions\UsuarioNotFoundException.cs" />
     <Compile Include="MovimientoDeCaja.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Producto.cs" />

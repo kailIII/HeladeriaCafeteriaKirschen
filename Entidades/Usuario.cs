@@ -11,11 +11,11 @@ namespace Entidades
 	{
 		public Usuario () { }
 
-		public Usuario (string nombre, string contrasenia, TipoUsuario rol)
+		public Usuario (string nombre, string contrasenia)
 		{
 			this.NombreUsuario = nombre;
 			this.Contrasenia = contrasenia;
-			this.Rol = rol;
+			this.Rol = TipoUsuario.Vendedor;
 		}
 
 		[Key]

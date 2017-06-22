@@ -8,11 +8,10 @@ namespace Datos
 {
     public class MovimientoDeCaja
     {
-		private static DBHeladeria dbHeladeria = new DBHeladeria();
+		private static DBHeladeria dbHeladeria = DBHeladeria.Get;
 
         public static void NuevoMovimiento(Entidades.MovimientoDeCaja movimiento)
         {
-			/*TODO: Eliminar linea*/movimiento.Usuario = (dbHeladeria.Usuario.Find("Santiago") != null) ? dbHeladeria.Usuario.Find("Santiago") : new Entidades.Usuario { NombreUsuario = "Santiago", Contrasenia = "Contr", Rol = Entidades.TipoUsuario.Supervisor };
 			dbHeladeria.MovimientoDeCaja.Add(movimiento);
 			dbHeladeria.SaveChanges();
             Caja.EntidadesCaja.Monto += movimiento.Monto;

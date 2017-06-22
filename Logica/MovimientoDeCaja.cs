@@ -6,27 +6,25 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class MovimientoDeCaja
+    public static class MovimientoDeCaja
     {
         public static void NuevoDeposito(Entidades.MovimientoDeCaja deposito)
         {
             if (deposito.Monto <= 0)
-            {
-                throw new Exception("El monto del deposito debe ser mayor a 0");
-            }
+				throw new Exception("El monto del deposito debe ser mayor a 0");
+			if (!Usuario.UsuarioActualEstaLogueado())
+				throw new Entidades.Exceptions.ProhibidoException();
             Datos.MovimientoDeCaja.NuevoDeposito(deposito);
         }
 
         public static void NuevaExtraccion(Entidades.MovimientoDeCaja extraccion)
         {
             if (extraccion.Monto <= 0)
-            {
-                throw new Exception("El monto de la extracción debe ser mayor a 0");
-            }
+				throw new Exception("El monto de la extracción debe ser mayor a 0");
             if (Caja.Estado() - extraccion.Monto < 0)
-            {
-                throw new Exception(string.Format("El monto de la extracción supera el monto en la caja ({0:C})", Caja.Estado()));
-            }
+				throw new Exception(string.Format("El monto de la extracción supera el monto en la caja ({0:C})", Caja.Estado()));
+			if (!Usuario.UsuarioActualEstaLogueado())
+				throw new Entidades.Exceptions.ProhibidoException();
 			extraccion.Monto = -extraccion.Monto;
 			Datos.MovimientoDeCaja.NuevaExtraccion(extraccion);
         }

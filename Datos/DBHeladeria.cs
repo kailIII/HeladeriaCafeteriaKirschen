@@ -7,7 +7,7 @@ namespace Datos
 
 	public class DBHeladeria : DbContext
 	{
-		public DBHeladeria()
+		private DBHeladeria()
 			: base("name=DBHeladeria")
 		{
 		}
@@ -24,6 +24,17 @@ namespace Datos
 		{
 			base.OnModelCreating(modelBuilder);
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+		}
+
+		private static DBHeladeria instance;
+
+		public static DBHeladeria Get
+		{
+			get
+			{
+				if (instance == null) instance = new DBHeladeria();
+				return instance;
+			}
 		}
 	}
 }
