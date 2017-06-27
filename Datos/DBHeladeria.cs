@@ -29,7 +29,7 @@ namespace Datos
 
 		private static DBHeladeria instance;
 
-		public static DBHeladeria Get
+		public static DBHeladeria Instance
 		{
 			get
 			{

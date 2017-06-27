@@ -3,14 +3,14 @@
 	partial class MenuPrincipal
 	{
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Required designer variable.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Clean up any resources being used.
 		/// </summary>
-		/// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
@@ -20,196 +20,208 @@
 			base.Dispose(disposing);
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+		#region Windows Form Designer generated code
 
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.TabCaja = new System.Windows.Forms.TabPage();
-			this.BtnMovimientosDeCaja = new System.Windows.Forms.Button();
-			this.BtnExtraccion = new System.Windows.Forms.Button();
-			this.BtnDepositoCaja = new System.Windows.Forms.Button();
-			this.TabPedido = new System.Windows.Forms.TabPage();
-			this.TabUsuario = new System.Windows.Forms.TabPage();
-			this.btnNuevoUsuario = new System.Windows.Forms.Button();
-			this.btnLogOut = new System.Windows.Forms.Button();
-			this.btnLogIn = new System.Windows.Forms.Button();
-			this.lblNombreUsuario = new System.Windows.Forms.Label();
-			this.TabProducto = new System.Windows.Forms.TabPage();
-			this.LblEstadoDeCaja = new System.Windows.Forms.Label();
-			this.TxtEstadoDeCaja = new System.Windows.Forms.TextBox();
+			this.components = new System.ComponentModel.Container();
+			this.menuStrip = new System.Windows.Forms.MenuStrip();
+			this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiUsuario = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnLogIn = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnLogOut = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnCambiarContrasenia = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnNuevoUsuario = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiCaja = new System.Windows.Forms.ToolStripMenuItem();
+			this.depositoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.extraccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.limiteDeAlertaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.PnlCaja = new System.Windows.Forms.Panel();
+			this.PnlAlerta = new System.Windows.Forms.Panel();
 			this.PctAlertaCaja = new System.Windows.Forms.PictureBox();
 			this.LblAlerta = new System.Windows.Forms.Label();
-			this.PnlAlerta = new System.Windows.Forms.Panel();
-			this.btnUsuarios = new System.Windows.Forms.Button();
-			this.tabControl1.SuspendLayout();
-			this.TabCaja.SuspendLayout();
-			this.TabUsuario.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PctAlertaCaja)).BeginInit();
+			this.TxtEstadoDeCaja = new System.Windows.Forms.TextBox();
+			this.LblEstadoDeCaja = new System.Windows.Forms.Label();
+			this.btnNuevoProducto = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip.SuspendLayout();
+			this.PnlCaja.SuspendLayout();
 			this.PnlAlerta.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PctAlertaCaja)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// tabControl1
+			// menuStrip
 			// 
-			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.tabControl1.Controls.Add(this.TabCaja);
-			this.tabControl1.Controls.Add(this.TabPedido);
-			this.tabControl1.Controls.Add(this.TabUsuario);
-			this.tabControl1.Controls.Add(this.TabProducto);
-			this.tabControl1.Location = new System.Drawing.Point(12, 84);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(269, 172);
-			this.tabControl1.TabIndex = 0;
+			this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pedidoToolStripMenuItem,
+            this.productoToolStripMenuItem,
+            this.tsmiUsuario,
+            this.tsmiCaja});
+			this.menuStrip.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip.Name = "menuStrip";
+			this.menuStrip.Size = new System.Drawing.Size(632, 24);
+			this.menuStrip.TabIndex = 0;
+			this.menuStrip.Text = "MenuStrip";
 			// 
-			// TabCaja
+			// pedidoToolStripMenuItem
 			// 
-			this.TabCaja.Controls.Add(this.BtnMovimientosDeCaja);
-			this.TabCaja.Controls.Add(this.BtnExtraccion);
-			this.TabCaja.Controls.Add(this.BtnDepositoCaja);
-			this.TabCaja.Location = new System.Drawing.Point(4, 22);
-			this.TabCaja.Name = "TabCaja";
-			this.TabCaja.Padding = new System.Windows.Forms.Padding(3);
-			this.TabCaja.Size = new System.Drawing.Size(261, 146);
-			this.TabCaja.TabIndex = 0;
-			this.TabCaja.Text = "Caja";
-			this.TabCaja.UseVisualStyleBackColor = true;
+			this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
+			this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+			this.pedidoToolStripMenuItem.Text = "Pedido";
 			// 
-			// BtnMovimientosDeCaja
+			// productoToolStripMenuItem
 			// 
-			this.BtnMovimientosDeCaja.Location = new System.Drawing.Point(6, 64);
-			this.BtnMovimientosDeCaja.Name = "BtnMovimientosDeCaja";
-			this.BtnMovimientosDeCaja.Size = new System.Drawing.Size(240, 23);
-			this.BtnMovimientosDeCaja.TabIndex = 2;
-			this.BtnMovimientosDeCaja.Text = "Movimientos";
-			this.BtnMovimientosDeCaja.UseVisualStyleBackColor = true;
-			this.BtnMovimientosDeCaja.Click += new System.EventHandler(this.BtnMovimientosDeCaja_Click);
+			this.productoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNuevoProducto});
+			this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+			this.productoToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+			this.productoToolStripMenuItem.Text = "Producto";
 			// 
-			// BtnExtraccion
+			// tsmiUsuario
 			// 
-			this.BtnExtraccion.Location = new System.Drawing.Point(6, 35);
-			this.BtnExtraccion.Name = "BtnExtraccion";
-			this.BtnExtraccion.Size = new System.Drawing.Size(240, 23);
-			this.BtnExtraccion.TabIndex = 1;
-			this.BtnExtraccion.Text = "Extracción";
-			this.BtnExtraccion.UseVisualStyleBackColor = true;
-			this.BtnExtraccion.Click += new System.EventHandler(this.BtnExtraccion_Click);
-			// 
-			// BtnDepositoCaja
-			// 
-			this.BtnDepositoCaja.Location = new System.Drawing.Point(6, 6);
-			this.BtnDepositoCaja.Name = "BtnDepositoCaja";
-			this.BtnDepositoCaja.Size = new System.Drawing.Size(240, 23);
-			this.BtnDepositoCaja.TabIndex = 0;
-			this.BtnDepositoCaja.Text = "Deposito";
-			this.BtnDepositoCaja.UseVisualStyleBackColor = true;
-			this.BtnDepositoCaja.Click += new System.EventHandler(this.BtnDepositoCaja_Click);
-			// 
-			// TabPedido
-			// 
-			this.TabPedido.Location = new System.Drawing.Point(4, 22);
-			this.TabPedido.Name = "TabPedido";
-			this.TabPedido.Padding = new System.Windows.Forms.Padding(3);
-			this.TabPedido.Size = new System.Drawing.Size(261, 146);
-			this.TabPedido.TabIndex = 1;
-			this.TabPedido.Text = "Pedido";
-			this.TabPedido.UseVisualStyleBackColor = true;
-			// 
-			// TabUsuario
-			// 
-			this.TabUsuario.Controls.Add(this.btnUsuarios);
-			this.TabUsuario.Controls.Add(this.btnNuevoUsuario);
-			this.TabUsuario.Controls.Add(this.btnLogOut);
-			this.TabUsuario.Controls.Add(this.btnLogIn);
-			this.TabUsuario.Controls.Add(this.lblNombreUsuario);
-			this.TabUsuario.Location = new System.Drawing.Point(4, 22);
-			this.TabUsuario.Name = "TabUsuario";
-			this.TabUsuario.Size = new System.Drawing.Size(261, 146);
-			this.TabUsuario.TabIndex = 2;
-			this.TabUsuario.Text = "Usuario";
-			this.TabUsuario.UseVisualStyleBackColor = true;
-			// 
-			// btnNuevoUsuario
-			// 
-			this.btnNuevoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnNuevoUsuario.Location = new System.Drawing.Point(4, 86);
-			this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-			this.btnNuevoUsuario.Size = new System.Drawing.Size(254, 23);
-			this.btnNuevoUsuario.TabIndex = 8;
-			this.btnNuevoUsuario.Text = "Nuevo Usuario";
-			this.btnNuevoUsuario.UseVisualStyleBackColor = true;
-			this.btnNuevoUsuario.Visible = false;
-			this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click);
-			// 
-			// btnLogOut
-			// 
-			this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnLogOut.Enabled = false;
-			this.btnLogOut.Location = new System.Drawing.Point(4, 56);
-			this.btnLogOut.Name = "btnLogOut";
-			this.btnLogOut.Size = new System.Drawing.Size(254, 23);
-			this.btnLogOut.TabIndex = 7;
-			this.btnLogOut.Text = "Log Out";
-			this.btnLogOut.UseVisualStyleBackColor = true;
-			this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+			this.tsmiUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.tsmiUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnLogIn,
+            this.btnLogOut,
+            this.btnCambiarContrasenia,
+            this.btnNuevoUsuario,
+            this.btnUsuarios});
+			this.tsmiUsuario.ForeColor = System.Drawing.Color.White;
+			this.tsmiUsuario.Name = "tsmiUsuario";
+			this.tsmiUsuario.Size = new System.Drawing.Size(59, 20);
+			this.tsmiUsuario.Text = "Usuario";
 			// 
 			// btnLogIn
 			// 
-			this.btnLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnLogIn.Location = new System.Drawing.Point(4, 26);
+			this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnLogIn.ForeColor = System.Drawing.Color.White;
 			this.btnLogIn.Name = "btnLogIn";
-			this.btnLogIn.Size = new System.Drawing.Size(254, 23);
-			this.btnLogIn.TabIndex = 6;
+			this.btnLogIn.Size = new System.Drawing.Size(180, 22);
 			this.btnLogIn.Text = "Log In";
-			this.btnLogIn.UseVisualStyleBackColor = true;
-			this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+			this.btnLogIn.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
 			// 
-			// lblNombreUsuario
+			// btnLogOut
 			// 
-			this.lblNombreUsuario.AutoSize = true;
-			this.lblNombreUsuario.Location = new System.Drawing.Point(3, 9);
-			this.lblNombreUsuario.Name = "lblNombreUsuario";
-			this.lblNombreUsuario.Size = new System.Drawing.Size(35, 13);
-			this.lblNombreUsuario.TabIndex = 5;
-			this.lblNombreUsuario.Text = "label1";
-			this.lblNombreUsuario.Visible = false;
+			this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnLogOut.ForeColor = System.Drawing.Color.White;
+			this.btnLogOut.Name = "btnLogOut";
+			this.btnLogOut.Size = new System.Drawing.Size(180, 22);
+			this.btnLogOut.Text = "Log Out";
+			this.btnLogOut.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
 			// 
-			// TabProducto
+			// btnCambiarContrasenia
 			// 
-			this.TabProducto.Location = new System.Drawing.Point(4, 22);
-			this.TabProducto.Name = "TabProducto";
-			this.TabProducto.Size = new System.Drawing.Size(261, 146);
-			this.TabProducto.TabIndex = 3;
-			this.TabProducto.Text = "Producto";
-			this.TabProducto.UseVisualStyleBackColor = true;
+			this.btnCambiarContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnCambiarContrasenia.ForeColor = System.Drawing.Color.White;
+			this.btnCambiarContrasenia.Name = "btnCambiarContrasenia";
+			this.btnCambiarContrasenia.Size = new System.Drawing.Size(180, 22);
+			this.btnCambiarContrasenia.Text = "Cambiar contraseña";
+			this.btnCambiarContrasenia.Click += new System.EventHandler(this.cambiarContraseniaToolStripMenuItem_Click);
 			// 
-			// LblEstadoDeCaja
+			// btnNuevoUsuario
 			// 
-			this.LblEstadoDeCaja.AutoSize = true;
-			this.LblEstadoDeCaja.Location = new System.Drawing.Point(12, 15);
-			this.LblEstadoDeCaja.Name = "LblEstadoDeCaja";
-			this.LblEstadoDeCaja.Size = new System.Drawing.Size(78, 13);
-			this.LblEstadoDeCaja.TabIndex = 3;
-			this.LblEstadoDeCaja.Text = "Estado de caja";
+			this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnNuevoUsuario.ForeColor = System.Drawing.Color.White;
+			this.btnNuevoUsuario.Name = "btnNuevoUsuario";
+			this.btnNuevoUsuario.Size = new System.Drawing.Size(180, 22);
+			this.btnNuevoUsuario.Text = "Nuevo...";
+			this.btnNuevoUsuario.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
 			// 
-			// TxtEstadoDeCaja
+			// btnUsuarios
 			// 
-			this.TxtEstadoDeCaja.Location = new System.Drawing.Point(172, 12);
-			this.TxtEstadoDeCaja.Name = "TxtEstadoDeCaja";
-			this.TxtEstadoDeCaja.ReadOnly = true;
-			this.TxtEstadoDeCaja.Size = new System.Drawing.Size(100, 20);
-			this.TxtEstadoDeCaja.TabIndex = 4;
-			this.TxtEstadoDeCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+			this.btnUsuarios.Name = "btnUsuarios";
+			this.btnUsuarios.Size = new System.Drawing.Size(180, 22);
+			this.btnUsuarios.Text = "Usuarios...";
+			this.btnUsuarios.Click += new System.EventHandler(this.btnListaUsuarios_Click);
+			// 
+			// tsmiCaja
+			// 
+			this.tsmiCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.tsmiCaja.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.depositoToolStripMenuItem,
+            this.extraccionToolStripMenuItem,
+            this.movimientosToolStripMenuItem,
+            this.limiteDeAlertaToolStripMenuItem});
+			this.tsmiCaja.ForeColor = System.Drawing.Color.White;
+			this.tsmiCaja.Name = "tsmiCaja";
+			this.tsmiCaja.Size = new System.Drawing.Size(42, 20);
+			this.tsmiCaja.Text = "Caja";
+			// 
+			// depositoToolStripMenuItem
+			// 
+			this.depositoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.depositoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.depositoToolStripMenuItem.Name = "depositoToolStripMenuItem";
+			this.depositoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.depositoToolStripMenuItem.Text = "Depósito";
+			this.depositoToolStripMenuItem.Click += new System.EventHandler(this.depositoToolStripMenuItem_Click);
+			// 
+			// extraccionToolStripMenuItem
+			// 
+			this.extraccionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.extraccionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.extraccionToolStripMenuItem.Name = "extraccionToolStripMenuItem";
+			this.extraccionToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.extraccionToolStripMenuItem.Text = "Extracción";
+			this.extraccionToolStripMenuItem.Click += new System.EventHandler(this.extraccionToolStripMenuItem_Click);
+			// 
+			// movimientosToolStripMenuItem
+			// 
+			this.movimientosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.movimientosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
+			this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.movimientosToolStripMenuItem.Text = "Movimientos";
+			this.movimientosToolStripMenuItem.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
+			// 
+			// limiteDeAlertaToolStripMenuItem
+			// 
+			this.limiteDeAlertaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.limiteDeAlertaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.limiteDeAlertaToolStripMenuItem.Name = "limiteDeAlertaToolStripMenuItem";
+			this.limiteDeAlertaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.limiteDeAlertaToolStripMenuItem.Text = "Límite de Alerta...";
+			this.limiteDeAlertaToolStripMenuItem.Click += new System.EventHandler(this.limiteDeAlertaToolStripMenuItem_Click);
+			// 
+			// cajaToolStripMenuItem
+			// 
+			this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
+			this.cajaToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+			this.cajaToolStripMenuItem.Text = "Caja";
+			// 
+			// PnlCaja
+			// 
+			this.PnlCaja.Controls.Add(this.PnlAlerta);
+			this.PnlCaja.Controls.Add(this.TxtEstadoDeCaja);
+			this.PnlCaja.Controls.Add(this.LblEstadoDeCaja);
+			this.PnlCaja.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.PnlCaja.Location = new System.Drawing.Point(0, 413);
+			this.PnlCaja.Name = "PnlCaja";
+			this.PnlCaja.Size = new System.Drawing.Size(632, 40);
+			this.PnlCaja.TabIndex = 4;
+			// 
+			// PnlAlerta
+			// 
+			this.PnlAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.PnlAlerta.Controls.Add(this.PctAlertaCaja);
+			this.PnlAlerta.Controls.Add(this.LblAlerta);
+			this.PnlAlerta.Location = new System.Drawing.Point(429, 1);
+			this.PnlAlerta.Name = "PnlAlerta";
+			this.PnlAlerta.Size = new System.Drawing.Size(200, 36);
+			this.PnlAlerta.TabIndex = 6;
 			// 
 			// PctAlertaCaja
 			// 
@@ -221,80 +233,101 @@
 			// 
 			// LblAlerta
 			// 
-			this.LblAlerta.AutoSize = true;
+			this.LblAlerta.ForeColor = System.Drawing.Color.White;
 			this.LblAlerta.Location = new System.Drawing.Point(41, 3);
 			this.LblAlerta.Name = "LblAlerta";
-			this.LblAlerta.Size = new System.Drawing.Size(142, 13);
+			this.LblAlerta.Size = new System.Drawing.Size(142, 32);
 			this.LblAlerta.TabIndex = 6;
 			this.LblAlerta.Text = "Debe realizar una extracción";
+			this.LblAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// PnlAlerta
+			// TxtEstadoDeCaja
 			// 
-			this.PnlAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.PnlAlerta.Controls.Add(this.PctAlertaCaja);
-			this.PnlAlerta.Controls.Add(this.LblAlerta);
-			this.PnlAlerta.Location = new System.Drawing.Point(12, 38);
-			this.PnlAlerta.Name = "PnlAlerta";
-			this.PnlAlerta.Size = new System.Drawing.Size(269, 40);
-			this.PnlAlerta.TabIndex = 3;
+			this.TxtEstadoDeCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+			this.TxtEstadoDeCaja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.TxtEstadoDeCaja.Enabled = false;
+			this.TxtEstadoDeCaja.ForeColor = System.Drawing.Color.White;
+			this.TxtEstadoDeCaja.Location = new System.Drawing.Point(87, 11);
+			this.TxtEstadoDeCaja.Name = "TxtEstadoDeCaja";
+			this.TxtEstadoDeCaja.ReadOnly = true;
+			this.TxtEstadoDeCaja.Size = new System.Drawing.Size(100, 20);
+			this.TxtEstadoDeCaja.TabIndex = 6;
+			this.TxtEstadoDeCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
-			// btnUsuarios
+			// LblEstadoDeCaja
 			// 
-			this.btnUsuarios.Location = new System.Drawing.Point(4, 116);
-			this.btnUsuarios.Name = "btnUsuarios";
-			this.btnUsuarios.Size = new System.Drawing.Size(252, 23);
-			this.btnUsuarios.TabIndex = 9;
-			this.btnUsuarios.Text = "Usuarios...";
-			this.btnUsuarios.UseVisualStyleBackColor = true;
-			this.btnUsuarios.Visible = false;
-			this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+			this.LblEstadoDeCaja.ForeColor = System.Drawing.Color.White;
+			this.LblEstadoDeCaja.Location = new System.Drawing.Point(3, 3);
+			this.LblEstadoDeCaja.Name = "LblEstadoDeCaja";
+			this.LblEstadoDeCaja.Size = new System.Drawing.Size(78, 36);
+			this.LblEstadoDeCaja.TabIndex = 5;
+			this.LblEstadoDeCaja.Text = "Estado de caja";
+			this.LblEstadoDeCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// btnNuevoProducto
+			// 
+			this.btnNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
+			this.btnNuevoProducto.Name = "btnNuevoProducto";
+			this.btnNuevoProducto.Size = new System.Drawing.Size(152, 22);
+			this.btnNuevoProducto.Text = "Nuevo...";
+			this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
 			// 
 			// MenuPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(293, 268);
-			this.Controls.Add(this.PnlAlerta);
-			this.Controls.Add(this.TxtEstadoDeCaja);
-			this.Controls.Add(this.LblEstadoDeCaja);
-			this.Controls.Add(this.tabControl1);
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+			this.ClientSize = new System.Drawing.Size(632, 453);
+			this.Controls.Add(this.PnlCaja);
+			this.Controls.Add(this.menuStrip);
+			this.ForeColor = System.Drawing.Color.Black;
+			this.IsMdiContainer = true;
+			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MenuPrincipal";
 			this.Text = "Heladería-Cafetería Kirschen";
+			this.TransparencyKey = System.Drawing.Color.White;
 			this.Activated += new System.EventHandler(this.MenuPrincipal_Activated);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
 			this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-			this.tabControl1.ResumeLayout(false);
-			this.TabCaja.ResumeLayout(false);
-			this.TabUsuario.ResumeLayout(false);
-			this.TabUsuario.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.PctAlertaCaja)).EndInit();
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
+			this.PnlCaja.ResumeLayout(false);
+			this.PnlCaja.PerformLayout();
 			this.PnlAlerta.ResumeLayout(false);
-			this.PnlAlerta.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.PctAlertaCaja)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
+		#endregion
 
-        #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage TabCaja;
-        private System.Windows.Forms.Button BtnMovimientosDeCaja;
-        private System.Windows.Forms.Button BtnExtraccion;
-        private System.Windows.Forms.Button BtnDepositoCaja;
-        private System.Windows.Forms.TabPage TabPedido;
-        private System.Windows.Forms.TabPage TabUsuario;
-        private System.Windows.Forms.TabPage TabProducto;
-        private System.Windows.Forms.Label LblEstadoDeCaja;
-        private System.Windows.Forms.TextBox TxtEstadoDeCaja;
-        private System.Windows.Forms.PictureBox PctAlertaCaja;
-        private System.Windows.Forms.Label LblAlerta;
-        private System.Windows.Forms.Panel PnlAlerta;
-		private System.Windows.Forms.Label lblNombreUsuario;
-		private System.Windows.Forms.Button btnLogIn;
-		private System.Windows.Forms.Button btnLogOut;
-		private System.Windows.Forms.Button btnNuevoUsuario;
-		private System.Windows.Forms.Button btnUsuarios;
+		private System.Windows.Forms.MenuStrip menuStrip;
+		private System.Windows.Forms.ToolTip toolTip;
+		private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsmiUsuario;
+		private System.Windows.Forms.ToolStripMenuItem cajaToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsmiCaja;
+		private System.Windows.Forms.ToolStripMenuItem depositoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem extraccionToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem movimientosToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem btnLogIn;
+		private System.Windows.Forms.ToolStripMenuItem btnLogOut;
+		private System.Windows.Forms.ToolStripMenuItem btnNuevoUsuario;
+		private System.Windows.Forms.ToolStripMenuItem btnUsuarios;
+		private System.Windows.Forms.ToolStripMenuItem btnCambiarContrasenia;
+		private System.Windows.Forms.Panel PnlCaja;
+		private System.Windows.Forms.PictureBox PctAlertaCaja;
+		private System.Windows.Forms.Label LblAlerta;
+		private System.Windows.Forms.TextBox TxtEstadoDeCaja;
+		private System.Windows.Forms.Label LblEstadoDeCaja;
+		private System.Windows.Forms.Panel PnlAlerta;
+		private System.Windows.Forms.ToolStripMenuItem limiteDeAlertaToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem btnNuevoProducto;
 	}
 }
+
+
 

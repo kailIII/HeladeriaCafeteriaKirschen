@@ -12,97 +12,150 @@ namespace Presentacion
 {
 	public partial class MenuPrincipal : Form
 	{
+		private List<ToolStripMenuItem> botonesSupervisor;
+
 		public MenuPrincipal()
 		{
 			InitializeComponent();
+			botonesSupervisor = new List<ToolStripMenuItem> {
+				btnNuevoUsuario,
+				btnUsuarios,
+				tsmiCaja,
+				btnNuevoProducto
+			};
 			CheckLogIn();
 		}
 
-		private void MenuPrincipal_Load(object sender, EventArgs e)
+		private void ShowNewForm(Form formulario)
 		{
-            PctAlertaCaja.Image = SystemIcons.Warning.ToBitmap();
-        }
-
-        private void ShowNewForm(Form newForm)
-        {
-            newForm.ShowDialog(this);
-        }
-
-        private void BtnMovimientosDeCaja_Click(object sender, EventArgs e)
-        {
-            var frmListaMovimientosRango = new Caja.ListaMovimientosRango();
-            ShowNewForm(frmListaMovimientosRango);
-        }
-
-        private void BtnDepositoCaja_Click(object sender, EventArgs e)
-        {
-            var frmDepositoCaja = new Caja.DepositoCaja();
-            ShowNewForm(frmDepositoCaja);
-        }
-
-        private void BtnExtraccion_Click(object sender, EventArgs e)
-        {
-            var frmExtraccionCaja = new Caja.ExtraccionCaja();
-            ShowNewForm(frmExtraccionCaja);
-        }
-
-        private void MenuPrincipal_Activated(object sender, EventArgs e)
-        {
-            var estado = Logica.Caja.Estado();
-            TxtEstadoDeCaja.Text = string.Format("{0:C}", estado);
-            PnlAlerta.Visible = Logica.Caja.DebeEmitirAlerta();
-        }
-
-		private void btnLogIn_Click(object sender, EventArgs e)
-		{
-			Usuario.LogInUsuario logInForm = new Usuario.LogInUsuario();
-			ShowNewForm(logInForm);
-			CheckLogIn();
+			formulario.MdiParent = this;
+			formulario.StartPosition = FormStartPosition.CenterScreen;
+			formulario.Show();
 		}
 
-		private void btnLogOut_Click(object sender, EventArgs e)
+		public void CheckLogIn()
+		{
+			if (Logica.Usuario.UsuarioActualEstaLogueado())
+			{
+				btnLogIn.Visible = false;
+				btnLogOut.Visible = true;
+				btnCambiarContrasenia.Visible = true;
+				tsmiUsuario.Text = Logica.Usuario.GetUsuarioActual().NombreUsuario;
+			}
+			else
+			{
+				btnLogIn.Visible = true;
+				btnLogOut.Visible = false;
+				btnCambiarContrasenia.Visible = false;
+				tsmiUsuario.Text = "Usuario";
+			}
+			if (Logica.Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
+			{
+				botonesSupervisor.ForEach(btn => btn.Visible = true);
+			}
+			else
+			{
+				botonesSupervisor.ForEach(btn => btn.Visible = false);
+			}
+		}
+
+		private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LayoutMdi(MdiLayout.Cascade);
+		}
+
+		private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LayoutMdi(MdiLayout.TileVertical);
+		}
+
+		private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LayoutMdi(MdiLayout.TileHorizontal);
+		}
+
+		private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LayoutMdi(MdiLayout.ArrangeIcons);
+		}
+
+		private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			foreach (Form childForm in MdiChildren)
+			{
+				childForm.Close();
+			}
+		}
+
+		private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+			{
+				e.Cancel = true;
+			}
+		}
+
+		private void depositoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Caja.DepositoCaja());
+		}
+
+		private void extraccionToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Caja.ExtraccionCaja());
+		}
+
+		private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Caja.ListaMovimientosRango());
+		}
+
+		private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Usuario.AltaUsuario());
+		}
+
+		private void btnListaUsuarios_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Usuario.ListaUsuarios());
+		}
+
+		private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Logica.Usuario.LogOut();
 			CheckLogIn();
 		}
 
-		private void CheckLogIn()
+		private void logInToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (Logica.Usuario.UsuarioActualEstaLogueado())
-			{
-				btnLogIn.Enabled = false;
-				btnLogOut.Enabled = true;
-				lblNombreUsuario.Visible = true;
-				lblNombreUsuario.Text = Logica.Usuario.GetUsuarioActual().NombreUsuario;
-			}
-			else
-			{
-				btnLogIn.Enabled = true;
-				btnLogOut.Enabled = false;
-				lblNombreUsuario.Visible = false;
-			}
-			if (Logica.Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-			{
-				btnNuevoUsuario.Visible = true;
-				btnUsuarios.Visible = true;
-				btnUsuarios.Visible = true;
-			}
-			else
-			{
-				btnNuevoUsuario.Visible = false;
-				btnNuevoUsuario.Visible = false;
-				btnUsuarios.Visible = false;
-			}
+			ShowNewForm(new Usuario.LogInUsuario());
 		}
 
-		private void btnNuevoUsuario_Click(object sender, EventArgs e)
+		private void cambiarContraseniaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			ShowNewForm(new Usuario.AltaUsuario());
+			ShowNewForm(new Usuario.CambioContraseniaUsuario(Logica.Usuario.GetUsuarioActual()));
 		}
 
-		private void btnUsuarios_Click(object sender, EventArgs e)
+		private void MenuPrincipal_Load(object sender, EventArgs e)
 		{
-			ShowNewForm(new Usuario.ListaUsuarios());
+			PctAlertaCaja.Image = SystemIcons.Warning.ToBitmap();
+		}
+
+		private void MenuPrincipal_Activated(object sender, EventArgs e)
+		{
+			var estado = Logica.Caja.Estado();
+			TxtEstadoDeCaja.Text = string.Format("{0:C}", estado);
+			PnlAlerta.Visible = Logica.Caja.DebeEmitirAlerta();
+		}
+
+		private void limiteDeAlertaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Caja.ConfigurarLimiteCaja(PnlAlerta));
+		}
+
+		private void btnNuevoProducto_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Producto.AltaProducto());
 		}
 	}
 }

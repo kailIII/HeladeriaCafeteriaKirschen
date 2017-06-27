@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Entidades
 			this.Rol = TipoUsuario.Vendedor;
 		}
 
-		[Key]
+		[Key][DisplayName("Nombre de Usuario")]
 		public string NombreUsuario { get; set; }
 
 		[Required]

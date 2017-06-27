@@ -10,12 +10,12 @@ namespace Datos
 	{
 		private static Entidades.Usuario usuarioActual;
 
-		private static DBHeladeria baseDeDatos = DBHeladeria.Get;
+		private static DBHeladeria dbHeladeria = DBHeladeria.Instance;
 
 		public static void Nuevo(Entidades.Usuario usuario)
 		{
-			baseDeDatos.Usuario.Add(usuario);
-			baseDeDatos.SaveChanges();
+			dbHeladeria.Usuario.Add(usuario);
+			dbHeladeria.SaveChanges();
 		}
 
 		public static void LogIn(Entidades.Usuario usuario)
@@ -24,7 +24,7 @@ namespace Datos
 			if (usuarioBuscado != null)
 				usuarioActual = usuarioBuscado;
 			else
-				throw new Entidades.Exceptions.UsuarioNotFoundException();
+				throw new Entidades.Exceptions.UsuarioNoEncontradoException();
 		}
 
 		public static void LogOut()
@@ -57,14 +57,14 @@ namespace Datos
 
 		public static void Editar(Entidades.Usuario usuario)
 		{
-			baseDeDatos.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
-			baseDeDatos.SaveChanges();
+			dbHeladeria.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
+			dbHeladeria.SaveChanges();
 		}
 
 		public static void Borrar(string nombreUsuario)
 		{
-			baseDeDatos.Usuario.Remove(Usuario.Buscar(nombreUsuario));
-			baseDeDatos.SaveChanges();
+			dbHeladeria.Usuario.Remove(Usuario.Buscar(nombreUsuario));
+			dbHeladeria.SaveChanges();
 		}
 
 		public static bool Existe(string nombreUsuario)
@@ -79,7 +79,7 @@ namespace Datos
 
 		public static Entidades.Usuario Buscar(string nombreUsuario)
 		{
-			return baseDeDatos.Usuario.Find(nombreUsuario);
+			return dbHeladeria.Usuario.Find(nombreUsuario);
 		}
 
 		public static Entidades.Usuario Buscar(string nombreUsuario, string contrasenia)
@@ -87,7 +87,7 @@ namespace Datos
 			try
 			{
 				var query =
-					from usuarioBuscado in baseDeDatos.Usuario
+					from usuarioBuscado in dbHeladeria.Usuario
 					where nombreUsuario == usuarioBuscado.NombreUsuario
 						&& contrasenia == usuarioBuscado.Contrasenia
 					select usuarioBuscado;
@@ -101,7 +101,7 @@ namespace Datos
 
 		public static List<Entidades.Usuario> ToList()
 		{
-			return baseDeDatos.Usuario.ToList();
+			return dbHeladeria.Usuario.ToList();
 		}
 	}
 }

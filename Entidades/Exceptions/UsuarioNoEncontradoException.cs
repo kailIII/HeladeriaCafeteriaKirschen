@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades.Exceptions
 {
-	public class UsuarioNotFoundException : Exception
+	public class UsuarioNoEncontradoException : Exception
 	{
-		public UsuarioNotFoundException()
+		public UsuarioNoEncontradoException()
 			: base("No existe el usuario ingresado. Intente nuevamente con otro nombre de usuario y/o contraseña")
 		{
 			this.Source = "Datos";

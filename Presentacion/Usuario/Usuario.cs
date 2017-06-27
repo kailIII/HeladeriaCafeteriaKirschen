@@ -23,5 +23,11 @@ namespace Presentacion.Usuario
 		{
 			this.Close();
 		}
+
+		private void Usuario_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			MenuPrincipal menu = (MenuPrincipal)this.MdiParent;
+			if(menu != null) menu.CheckLogIn();
+		}
 	}
 }

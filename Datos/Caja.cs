@@ -8,9 +8,7 @@ namespace Datos
 {
     public class Caja
     {
-        public static Entidades.Caja EntidadesCaja = new Entidades.Caja { Monto = 0.0d };
-
-        public static double MontoLimite = 10.0d;
+        public static Entidades.Caja EntidadesCaja = new Entidades.Caja { Monto = 0.0d, Limite = 10.0d };
 
         public static double Estado()
         {
@@ -19,12 +17,12 @@ namespace Datos
 
         public static void SetLimite(double monto)
         {
-            MontoLimite = monto;
+			EntidadesCaja.Limite = monto;
         }
 
         public static bool DebeEmitirAlerta()
         {
-            return EntidadesCaja.Monto >= MontoLimite;
+            return EntidadesCaja.Monto >= EntidadesCaja.Limite;
         }
     }
 }

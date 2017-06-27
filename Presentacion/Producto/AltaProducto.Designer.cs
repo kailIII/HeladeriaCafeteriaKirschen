@@ -1,0 +1,279 @@
+﻿namespace Presentacion.Producto
+{
+	partial class AltaProducto
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Windows Form Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.lblNombreProducto = new System.Windows.Forms.Label();
+			this.txtNombreProducto = new System.Windows.Forms.TextBox();
+			this.lblPrecioVenta = new System.Windows.Forms.Label();
+			this.lblStock = new System.Windows.Forms.Label();
+			this.lblStockMinimo = new System.Windows.Forms.Label();
+			this.lblTipo = new System.Windows.Forms.Label();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
+			this.nudStock = new System.Windows.Forms.NumericUpDown();
+			this.nudStockMinimo = new System.Windows.Forms.NumericUpDown();
+			this.cboTipoProducto = new System.Windows.Forms.ComboBox();
+			this.btnAceptar = new System.Windows.Forms.Button();
+			this.btnCancelar = new System.Windows.Forms.Button();
+			this.tableLayoutPanel1.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.nudStockMinimo)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tableLayoutPanel1.ColumnCount = 1;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel1.Controls.Add(this.nudStockMinimo, 0, 7);
+			this.tableLayoutPanel1.Controls.Add(this.nudStock, 0, 5);
+			this.tableLayoutPanel1.Controls.Add(this.lblPrecioVenta, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.lblNombreProducto, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.txtNombreProducto, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.lblStock, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.lblStockMinimo, 0, 6);
+			this.tableLayoutPanel1.Controls.Add(this.lblTipo, 0, 8);
+			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 10);
+			this.tableLayoutPanel1.Controls.Add(this.nudPrecioVenta, 0, 3);
+			this.tableLayoutPanel1.Controls.Add(this.cboTipoProducto, 0, 9);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 11;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090082F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.099172F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(235, 322);
+			this.tableLayoutPanel1.TabIndex = 0;
+			// 
+			// lblNombreProducto
+			// 
+			this.lblNombreProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblNombreProducto.AutoSize = true;
+			this.lblNombreProducto.Location = new System.Drawing.Point(3, 16);
+			this.lblNombreProducto.Name = "lblNombreProducto";
+			this.lblNombreProducto.Size = new System.Drawing.Size(44, 13);
+			this.lblNombreProducto.TabIndex = 0;
+			this.lblNombreProducto.Text = "Nombre";
+			// 
+			// txtNombreProducto
+			// 
+			this.txtNombreProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtNombreProducto.Location = new System.Drawing.Point(3, 32);
+			this.txtNombreProducto.Name = "txtNombreProducto";
+			this.txtNombreProducto.Size = new System.Drawing.Size(229, 20);
+			this.txtNombreProducto.TabIndex = 1;
+			// 
+			// lblPrecioVenta
+			// 
+			this.lblPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblPrecioVenta.AutoSize = true;
+			this.lblPrecioVenta.Location = new System.Drawing.Point(3, 74);
+			this.lblPrecioVenta.Name = "lblPrecioVenta";
+			this.lblPrecioVenta.Size = new System.Drawing.Size(83, 13);
+			this.lblPrecioVenta.TabIndex = 2;
+			this.lblPrecioVenta.Text = "Precio de Venta";
+			// 
+			// lblStock
+			// 
+			this.lblStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblStock.AutoSize = true;
+			this.lblStock.Location = new System.Drawing.Point(3, 132);
+			this.lblStock.Name = "lblStock";
+			this.lblStock.Size = new System.Drawing.Size(35, 13);
+			this.lblStock.TabIndex = 3;
+			this.lblStock.Text = "Stock";
+			// 
+			// lblStockMinimo
+			// 
+			this.lblStockMinimo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblStockMinimo.AutoSize = true;
+			this.lblStockMinimo.Location = new System.Drawing.Point(3, 190);
+			this.lblStockMinimo.Name = "lblStockMinimo";
+			this.lblStockMinimo.Size = new System.Drawing.Size(73, 13);
+			this.lblStockMinimo.TabIndex = 4;
+			this.lblStockMinimo.Text = "Stock Mínimo";
+			// 
+			// lblTipo
+			// 
+			this.lblTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblTipo.AutoSize = true;
+			this.lblTipo.Location = new System.Drawing.Point(3, 248);
+			this.lblTipo.Name = "lblTipo";
+			this.lblTipo.Size = new System.Drawing.Size(28, 13);
+			this.lblTipo.TabIndex = 5;
+			this.lblTipo.Text = "Tipo";
+			// 
+			// tableLayoutPanel2
+			// 
+			this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tableLayoutPanel2.ColumnCount = 2;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel2.Controls.Add(this.btnCancelar, 1, 0);
+			this.tableLayoutPanel2.Controls.Add(this.btnAceptar, 0, 0);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 293);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 1;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(229, 26);
+			this.tableLayoutPanel2.TabIndex = 6;
+			// 
+			// nudPrecioVenta
+			// 
+			this.nudPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nudPrecioVenta.DecimalPlaces = 2;
+			this.nudPrecioVenta.Location = new System.Drawing.Point(3, 90);
+			this.nudPrecioVenta.Maximum = new decimal(new int[] {
+            -469762049,
+            -590869294,
+            5421010,
+            0});
+			this.nudPrecioVenta.Name = "nudPrecioVenta";
+			this.nudPrecioVenta.Size = new System.Drawing.Size(229, 20);
+			this.nudPrecioVenta.TabIndex = 7;
+			// 
+			// nudStock
+			// 
+			this.nudStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nudStock.Location = new System.Drawing.Point(3, 148);
+			this.nudStock.Maximum = new decimal(new int[] {
+            -469762049,
+            -590869294,
+            5421010,
+            0});
+			this.nudStock.Name = "nudStock";
+			this.nudStock.Size = new System.Drawing.Size(229, 20);
+			this.nudStock.TabIndex = 8;
+			// 
+			// nudStockMinimo
+			// 
+			this.nudStockMinimo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.nudStockMinimo.Location = new System.Drawing.Point(3, 206);
+			this.nudStockMinimo.Maximum = new decimal(new int[] {
+            -469762049,
+            -590869294,
+            5421010,
+            0});
+			this.nudStockMinimo.Name = "nudStockMinimo";
+			this.nudStockMinimo.Size = new System.Drawing.Size(229, 20);
+			this.nudStockMinimo.TabIndex = 9;
+			// 
+			// cboTipoProducto
+			// 
+			this.cboTipoProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboTipoProducto.FormattingEnabled = true;
+			this.cboTipoProducto.Location = new System.Drawing.Point(3, 264);
+			this.cboTipoProducto.Name = "cboTipoProducto";
+			this.cboTipoProducto.Size = new System.Drawing.Size(229, 21);
+			this.cboTipoProducto.TabIndex = 10;
+			// 
+			// btnAceptar
+			// 
+			this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAceptar.AutoSize = true;
+			this.btnAceptar.Location = new System.Drawing.Point(3, 3);
+			this.btnAceptar.Name = "btnAceptar";
+			this.btnAceptar.Size = new System.Drawing.Size(108, 20);
+			this.btnAceptar.TabIndex = 0;
+			this.btnAceptar.Text = "Aceptar";
+			this.btnAceptar.UseVisualStyleBackColor = true;
+			this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+			// 
+			// btnCancelar
+			// 
+			this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnCancelar.AutoSize = true;
+			this.btnCancelar.Location = new System.Drawing.Point(117, 3);
+			this.btnCancelar.Name = "btnCancelar";
+			this.btnCancelar.Size = new System.Drawing.Size(109, 20);
+			this.btnCancelar.TabIndex = 1;
+			this.btnCancelar.Text = "Cancelar";
+			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+			// 
+			// AltaProducto
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(260, 347);
+			this.Controls.Add(this.tableLayoutPanel1);
+			this.Name = "AltaProducto";
+			this.Text = "Nuevo Producto";
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tableLayoutPanel1.PerformLayout();
+			this.tableLayoutPanel2.ResumeLayout(false);
+			this.tableLayoutPanel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.nudStockMinimo)).EndInit();
+			this.ResumeLayout(false);
+
+		}
+
+		#endregion
+
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.Button btnCancelar;
+		private System.Windows.Forms.Button btnAceptar;
+		protected System.Windows.Forms.Label lblPrecioVenta;
+		protected System.Windows.Forms.Label lblNombreProducto;
+		protected System.Windows.Forms.TextBox txtNombreProducto;
+		protected System.Windows.Forms.Label lblStock;
+		protected System.Windows.Forms.Label lblStockMinimo;
+		protected System.Windows.Forms.Label lblTipo;
+		protected System.Windows.Forms.NumericUpDown nudPrecioVenta;
+		protected System.Windows.Forms.NumericUpDown nudStockMinimo;
+		protected System.Windows.Forms.NumericUpDown nudStock;
+		protected System.Windows.Forms.ComboBox cboTipoProducto;
+	}
+}

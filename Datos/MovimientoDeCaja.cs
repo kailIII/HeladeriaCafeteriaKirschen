@@ -8,7 +8,7 @@ namespace Datos
 {
     public class MovimientoDeCaja
     {
-		private static DBHeladeria dbHeladeria = DBHeladeria.Get;
+		private static DBHeladeria dbHeladeria = DBHeladeria.Instance;
 
         public static void NuevoMovimiento(Entidades.MovimientoDeCaja movimiento)
         {

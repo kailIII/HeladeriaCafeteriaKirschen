@@ -9,5 +9,7 @@ namespace Entidades
 	public class Caja
 	{
 		public double Monto { get; set; }
+
+		public double Limite { get; set; }
 	}
 }

@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja\ConfigurarLimiteCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\ConfigurarLimiteCaja.Designer.cs">
+      <DependentUpon>ConfigurarLimiteCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caja\DepositoCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,18 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\AltaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\AltaProducto.Designer.cs">
+      <DependentUpon>AltaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\EdicionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\EdicionProducto.Designer.cs">
+      <DependentUpon>EdicionProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario\AltaUsuario.cs">
@@ -86,6 +104,18 @@
     </Compile>
     <Compile Include="Usuario\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\CambiarRolUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\CambiarRolUsuarios.Designer.cs">
+      <DependentUpon>CambiarRolUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\CambioContraseniaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\CambioContraseniaUsuario.Designer.cs">
+      <DependentUpon>CambioContraseniaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario\ListaUsuarios.cs">
       <SubType>Form</SubType>
@@ -105,6 +135,9 @@
     <Compile Include="Usuario\Usuario.Designer.cs">
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Caja\ConfigurarLimiteCaja.resx">
+      <DependentUpon>ConfigurarLimiteCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Caja\DepositoCaja.resx">
       <DependentUpon>DepositoCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +150,12 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\AltaProducto.resx">
+      <DependentUpon>AltaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\EdicionProducto.resx">
+      <DependentUpon>EdicionProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,6 +165,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Usuario\CambiarRolUsuarios.resx">
+      <DependentUpon>CambiarRolUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\ListaUsuarios.resx">
       <DependentUpon>ListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
