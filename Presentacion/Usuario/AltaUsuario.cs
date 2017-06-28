@@ -29,7 +29,7 @@ namespace Presentacion.Usuario
 			}
 			catch(Exception ex)
 			{
-				MessageBox.Show(this, "Error de " + ex.Source + ": " + ex.Message);
+				this.MostrarExcepcion(ex);
 			}
 		}
 	}

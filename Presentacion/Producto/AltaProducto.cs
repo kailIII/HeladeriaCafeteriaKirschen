@@ -10,17 +10,12 @@ using System.Windows.Forms;
 
 namespace Presentacion.Producto
 {
-	public partial class AltaProducto : Form
+	public partial class AltaProducto : CoreClasses.Formulario
 	{
 		public AltaProducto()
 		{
 			InitializeComponent();
 			cboTipoProducto.DataSource = Enum.GetValues(typeof(Entidades.TipoProducto));
-		}
-
-		private void btnCancelar_Click(object sender, EventArgs e)
-		{
-			this.Close();
 		}
 
 		protected void SetProducto(Entidades.Producto producto)
@@ -44,7 +39,7 @@ namespace Presentacion.Producto
 			}
 			catch(Exception ex)
 			{
-				MessageBox.Show(this, ex.Message);
+				this.MostrarExcepcion(ex);
 			}
 		}
 	}

@@ -10,52 +10,55 @@ using System.Windows.Forms;
 
 namespace Presentacion.Usuario
 {
-	public partial class ListaUsuarios : Form
+	public partial class ListaUsuarios : CoreClasses.ListaEntidades
 	{
 		List<Entidades.Usuario> usuarios;
 
 		public ListaUsuarios()
 		{
 			InitializeComponent();
-			CargarUsuarios(null, null);
+			btnNuevo.Text = "Nuevo Usuario";
+			this.Text = "Listado de Usuarios";
+			btnAccion3.Text = "Cambiar Rol Seleccionados";
+			btnAccion3.Click += new System.EventHandler(this.btnCambiarRol_Click);
 		}
 
-		private void CargarUsuarios(object sender, EventArgs e)
+		protected override void CargarEntidades(object sender, EventArgs e)
 		{
 			usuarios = Logica.Usuario.ToList();
 			txtBuscar.Text = "";
-			dgvUsuarios.DataSource = usuarios;
-			dgvUsuarios.Columns[1].Visible = false;
-			dgvUsuarios.Columns[3].Visible = false;
+			dgvEntidades.DataSource = usuarios;
+			dgvEntidades.Columns[1].Visible = false;
+			dgvEntidades.Columns[3].Visible = false;
 		}
 
-		private void txtBuscar_TextChanged(object sender, EventArgs e)
+		protected override void txtBuscar_TextChanged(object sender, EventArgs e)
 		{
 			if (txtBuscar.Text != null && txtBuscar.Text != "")
-				dgvUsuarios.DataSource = usuarios.Where(u => u.NombreUsuario.ToLower().Contains(txtBuscar.Text.ToLower())).ToList();
+				dgvEntidades.DataSource = usuarios.Where(u => u.NombreUsuario.ToLower().Contains(txtBuscar.Text.ToLower())).ToList();
 			else
-				dgvUsuarios.DataSource = usuarios;
+				dgvEntidades.DataSource = usuarios;
 		}
 
-		private void btnBorrar_Click(object sender, EventArgs e)
+		protected override void btnBorrar_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("¿Está seguro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+			if (this.MostrarSiNoMensaje("Eliminar", "¿Está seguro?"))
 			{
 				try
 				{
 					List<Entidades.Usuario> usuariosSeleccionados = GetUsuariosSeleccionados();
 					usuariosSeleccionados.ForEach(u => Logica.Usuario.Borrar(u.NombreUsuario));
 					MessageBox.Show(this, usuariosSeleccionados.Count() + " usuarios eliminados.");
-					CargarUsuarios(null, null);
+					CargarEntidades(null, null);
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show("Error de" + ex.Source + ": " + ex.Message);
+					this.MostrarExcepcion(ex);
 				}
 			}
 		}
 
-		private void btnNuevoUsuario_Click(object sender, EventArgs e)
+		protected override void btnNuevo_Click(object sender, EventArgs e)
 		{
 			ShowNewForm(new AltaUsuario());
 		}
@@ -68,20 +71,14 @@ namespace Presentacion.Usuario
 		private List<Entidades.Usuario> GetUsuariosSeleccionados()
 		{
 			List<Entidades.Usuario> usuariosSeleccionados = new List<Entidades.Usuario>();
-			var rowsEnumerator = dgvUsuarios.SelectedRows.GetEnumerator();
+			var rowsEnumerator = dgvEntidades.SelectedRows.GetEnumerator();
 			while (rowsEnumerator.MoveNext())
 			{
 				string nombreUsuario = ((DataGridViewRow)rowsEnumerator.Current).Cells[0].Value.ToString();
-				if (nombreUsuario != Logica.Usuario.GetUsuarioActual().NombreUsuario)
+				if (Logica.Usuario.UsuarioActualEstaLogueado() && nombreUsuario != Logica.Usuario.GetUsuarioActual().NombreUsuario)
 					usuariosSeleccionados.Add(usuarios.Find(u => u.NombreUsuario == nombreUsuario));
 			}
 			return usuariosSeleccionados;
-		}
-
-		private void ShowNewForm(Form newForm)
-		{
-			newForm.ShowDialog(this);
-			CargarUsuarios(null, null);
 		}
 	}
 }

@@ -37,7 +37,7 @@ namespace Presentacion.Producto
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(this, ex.Message);
+				this.MostrarExcepcion(ex);
 			}
 		}
 	}

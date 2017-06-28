@@ -15,6 +15,7 @@ namespace Logica
 
         public static void SetLimite(double monto)
         {
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
             Datos.Caja.SetLimite(monto);
         }
 

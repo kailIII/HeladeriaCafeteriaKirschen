@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Presentacion.Usuario
 {
-	public partial class CambiarRolUsuarios : Form
+	public partial class CambiarRolUsuarios : CoreClasses.Formulario
 	{
 		private List<Entidades.Usuario> usuarios;
 
@@ -19,15 +19,13 @@ namespace Presentacion.Usuario
 		{
 			InitializeComponent();
 			this.usuarios = usuarios;
-			txtUsuarios.Text = usuarios.Aggregate("", (acum, u) => acum + u.NombreUsuario + ", ");
-			txtUsuarios.Text = txtUsuarios.Text.Substring(0, txtUsuarios.Text.Length - 2);
+			if(usuarios.Count() > 0)
+			{
+				txtUsuarios.Text = usuarios.Aggregate("", (acum, u) => acum + u.NombreUsuario + ", ");
+				txtUsuarios.Text = txtUsuarios.Text.Substring(0, txtUsuarios.Text.Length - 2);
+			}
 			cboRol.DataSource = Enum.GetValues(typeof(Entidades.TipoUsuario));
 			cboRol.SelectedIndex = -1;
-		}
-
-		private void btnCancelar_Click(object sender, EventArgs e)
-		{
-			this.Close();
 		}
 
 		private void btnAceptar_Click(object sender, EventArgs e)
@@ -41,7 +39,7 @@ namespace Presentacion.Usuario
 			}
 			catch(Exception ex)
 			{
-				MessageBox.Show(this, "Error de " + ex.Source + ": " + ex.Message);
+				this.MostrarExcepcion(ex);
 			}
 		}
 	}

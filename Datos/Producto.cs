@@ -26,5 +26,16 @@ namespace Datos
 		{
 			return dbHeladeria.Producto.Find(nombreProducto);
 		}
+
+		public static void Borrar(string nombreProducto)
+		{
+			dbHeladeria.Producto.Remove(Buscar(nombreProducto));
+			dbHeladeria.SaveChanges();
+		}
+
+		public static List<Entidades.Producto> ToList()
+		{
+			return dbHeladeria.Producto.ToList();
+		}
 	}
 }

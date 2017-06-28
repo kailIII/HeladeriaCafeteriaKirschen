@@ -10,21 +10,30 @@ namespace Logica
 	{
 		public static void Nuevo(Entidades.Producto producto)
 		{
-			if (!Datos.Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-				throw new Entidades.Exceptions.ProhibidoException();
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
 			Datos.Producto.Nuevo(producto);
 		}
 
 		public static void Editar(Entidades.Producto producto)
 		{
-			if (!Datos.Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-				throw new Entidades.Exceptions.ProhibidoException();
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
 			Datos.Producto.Editar(producto);
 		}
 
 		public static Entidades.Producto Buscar(string nombreProducto)
 		{
 			return Datos.Producto.Buscar(nombreProducto);
+		}
+
+		public static void Borrar(string nombreProducto)
+		{
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
+			Datos.Producto.Borrar(nombreProducto);
+		}
+
+		public static List<Entidades.Producto> ToList()
+		{
+			return Datos.Producto.ToList();
 		}
 	}
 }

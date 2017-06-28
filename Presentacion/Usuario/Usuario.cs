@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Presentacion.Usuario
 {
-	public abstract partial class Usuario : Form
+	public abstract partial class Usuario : CoreClasses.Formulario
 	{
 		public Usuario()
 		{
@@ -18,11 +18,6 @@ namespace Presentacion.Usuario
 		}
 
 		protected abstract void btnAceptar_Click(object sender, EventArgs e);
-
-		protected virtual void btnCancelar_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
 
 		private void Usuario_FormClosing(object sender, FormClosingEventArgs e)
 		{

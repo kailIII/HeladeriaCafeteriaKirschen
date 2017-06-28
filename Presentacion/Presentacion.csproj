@@ -79,6 +79,18 @@
     <Compile Include="Caja\ListaMovimientosRango.Designer.cs">
       <DependentUpon>ListaMovimientosRango.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoreClasses\Formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoreClasses\Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoreClasses\ListaEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoreClasses\ListaEntidades.Designer.cs">
+      <DependentUpon>ListaEntidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,18 @@
     </Compile>
     <Compile Include="Producto\EdicionProducto.Designer.cs">
       <DependentUpon>EdicionProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\ListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\ListaProductos.Designer.cs">
+      <DependentUpon>ListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\VerProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\VerProducto.Designer.cs">
+      <DependentUpon>VerProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\ListaMovimientosRango.resx">
       <DependentUpon>ListaMovimientosRango.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoreClasses\ListaEntidades.resx">
+      <DependentUpon>ListaEntidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

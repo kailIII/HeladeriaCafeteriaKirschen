@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Presentacion.Caja
 {
-	public partial class ConfigurarLimiteCaja : Form
+	public partial class ConfigurarLimiteCaja : CoreClasses.Formulario
 	{
 		private Panel panelAlerta;
 
@@ -20,16 +20,18 @@ namespace Presentacion.Caja
 			this.panelAlerta = panelAlerta;
 		}
 
-		private void btnCancelar_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-
 		private void btnAceptar_Click(object sender, EventArgs e)
 		{
-			Logica.Caja.SetLimite(Convert.ToDouble(nudLimite.Value));
-			panelAlerta.Visible = Logica.Caja.DebeEmitirAlerta();
-			this.Close();
+			try
+			{
+				Logica.Caja.SetLimite(Convert.ToDouble(nudLimite.Value));
+				panelAlerta.Visible = Logica.Caja.DebeEmitirAlerta();
+				this.Close();
+			}
+			catch(Exception ex)
+			{
+				this.MostrarExcepcion(ex);
+			}
 		}
 	}
 }

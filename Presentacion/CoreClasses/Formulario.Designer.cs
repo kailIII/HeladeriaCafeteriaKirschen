@@ -1,6 +1,6 @@
-﻿namespace Presentacion.Usuario
+﻿namespace Presentacion.CoreClasses
 {
-	partial class ListaUsuarios
+	partial class Formulario
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,18 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// ListaUsuarios
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.components = new System.ComponentModel.Container();
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(506, 271);
-			this.MinimumSize = new System.Drawing.Size(316, 272);
-			this.Name = "ListaUsuarios";
-			this.Text = "Lista de Usuarios";
-			this.ResumeLayout(false);
-
+			this.Text = "Formulario";
 		}
 
 		#endregion

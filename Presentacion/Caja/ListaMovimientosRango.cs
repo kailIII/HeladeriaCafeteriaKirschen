@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Presentacion.Caja
 {
-    public partial class ListaMovimientosRango : Form
+    public partial class ListaMovimientosRango : CoreClasses.Formulario
     {
         public ListaMovimientosRango()
         {
@@ -37,16 +37,11 @@ namespace Presentacion.Caja
             }
         }
 
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void ListaMovimientosRango_Load(object sender, EventArgs e)
         {
             var hoy = DateTime.Now.Date;
             DateTimeDesde.Value = new DateTime(hoy.Year, hoy.Month, hoy.Day, 0, 0, 0);
             DateTimeHasta.Value = new DateTime(hoy.Year, hoy.Month, hoy.Day, 23, 59, 59);
         }
-    }
+	}
 }

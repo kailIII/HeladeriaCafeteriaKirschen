@@ -32,6 +32,7 @@
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnNuevoProducto = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsmiUsuario = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnLogIn = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnLogOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,7 @@
 			this.LblAlerta = new System.Windows.Forms.Label();
 			this.TxtEstadoDeCaja = new System.Windows.Forms.TextBox();
 			this.LblEstadoDeCaja = new System.Windows.Forms.Label();
-			this.btnNuevoProducto = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnProductos = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.PnlCaja.SuspendLayout();
 			this.PnlAlerta.SuspendLayout();
@@ -81,11 +82,21 @@
 			// productoToolStripMenuItem
 			// 
 			this.productoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevoProducto});
+            this.btnNuevoProducto,
+            this.btnProductos});
 			this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
 			this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
 			this.productoToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
 			this.productoToolStripMenuItem.Text = "Producto";
+			// 
+			// btnNuevoProducto
+			// 
+			this.btnNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
+			this.btnNuevoProducto.Name = "btnNuevoProducto";
+			this.btnNuevoProducto.Size = new System.Drawing.Size(152, 22);
+			this.btnNuevoProducto.Text = "Nuevo...";
+			this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
 			// 
 			// tsmiUsuario
 			// 
@@ -264,14 +275,14 @@
 			this.LblEstadoDeCaja.Text = "Estado de caja";
 			this.LblEstadoDeCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// btnNuevoProducto
+			// btnProductos
 			// 
-			this.btnNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
-			this.btnNuevoProducto.Name = "btnNuevoProducto";
-			this.btnNuevoProducto.Size = new System.Drawing.Size(152, 22);
-			this.btnNuevoProducto.Text = "Nuevo...";
-			this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
+			this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.btnProductos.ForeColor = System.Drawing.Color.White;
+			this.btnProductos.Name = "btnProductos";
+			this.btnProductos.Size = new System.Drawing.Size(152, 22);
+			this.btnProductos.Text = "Productos...";
+			this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
 			// 
 			// MenuPrincipal
 			// 
@@ -326,6 +337,7 @@
 		private System.Windows.Forms.Panel PnlAlerta;
 		private System.Windows.Forms.ToolStripMenuItem limiteDeAlertaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem btnNuevoProducto;
+		private System.Windows.Forms.ToolStripMenuItem btnProductos;
 	}
 }
 

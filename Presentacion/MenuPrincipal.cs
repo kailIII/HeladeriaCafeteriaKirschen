@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-	public partial class MenuPrincipal : Form
+	public partial class MenuPrincipal : CoreClasses.Formulario
 	{
 		private List<ToolStripMenuItem> botonesSupervisor;
 
-		public MenuPrincipal()
+		public MenuPrincipal() : base()
 		{
 			InitializeComponent();
 			botonesSupervisor = new List<ToolStripMenuItem> {
@@ -26,7 +26,7 @@ namespace Presentacion
 			CheckLogIn();
 		}
 
-		private void ShowNewForm(Form formulario)
+		protected override void ShowNewForm(Form formulario)
 		{
 			formulario.MdiParent = this;
 			formulario.StartPosition = FormStartPosition.CenterScreen;
@@ -89,7 +89,7 @@ namespace Presentacion
 
 		private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (MessageBox.Show("¿Está seguro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+			if (!this.MostrarSiNoMensaje("Salir", "¿Está seguro?"))
 			{
 				e.Cancel = true;
 			}
@@ -122,8 +122,12 @@ namespace Presentacion
 
 		private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Logica.Usuario.LogOut();
-			CheckLogIn();
+			if(this.MostrarSiNoMensaje("Cerrar Sesión", "¿Está seguro que desea cerrar sesión? Se cerrarán las ventanas abiertas."))
+			{
+				Logica.Usuario.LogOut();
+				CloseAllToolStripMenuItem_Click(null, null);
+				CheckLogIn();
+			}
 		}
 
 		private void logInToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,6 +160,11 @@ namespace Presentacion
 		private void btnNuevoProducto_Click(object sender, EventArgs e)
 		{
 			ShowNewForm(new Producto.AltaProducto());
+		}
+
+		private void btnProductos_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Producto.ListaProductos());
 		}
 	}
 }

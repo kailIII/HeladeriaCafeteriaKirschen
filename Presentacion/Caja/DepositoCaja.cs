@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Presentacion.Caja
 {
-    public partial class DepositoCaja : Form
+    public partial class DepositoCaja : CoreClasses.Formulario
     {
         public DepositoCaja()
         {
@@ -40,12 +40,7 @@ namespace Presentacion.Caja
 			}
 			catch (Exception exception)
 			{
-				MessageBox.Show(
-					this,
-					"No se pudo realizar el movimiento de caja: " + exception.Message,
-					"Error",
-					MessageBoxButtons.OK,
-					MessageBoxIcon.Error);
+				this.MostrarExcepcion(exception);
 			}
 		}
 
@@ -65,10 +60,5 @@ namespace Presentacion.Caja
 
             RegistrarMovimiento((double)NumMonto.Value, TxtRazon.Text, Logica.Usuario.GetUsuarioActual());
 		}
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-    }
+	}
 }

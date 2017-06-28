@@ -10,10 +10,8 @@ namespace Logica
 	{
 		public static void Nuevo(Entidades.Usuario usuario)
 		{
-			if (Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-				Datos.Usuario.Nuevo(usuario);
-			else
-				throw new Entidades.Exceptions.ProhibidoException();
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
+			Datos.Usuario.Nuevo(usuario);
 		}
 
 		public static void LogIn(Entidades.Usuario usuario)
@@ -43,26 +41,29 @@ namespace Logica
 
 		public static void CambiarRol(Entidades.Usuario usuario, Entidades.TipoUsuario rol)
 		{
-			if (Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-				Datos.Usuario.CambiarRol(usuario, rol);
-			else
-				throw new Entidades.Exceptions.ProhibidoException();
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
+			Datos.Usuario.CambiarRol(usuario, rol);
+		}
+
+		public static void CambiarContrasenia(Entidades.Usuario usuario, string contraseniaAnterior, string nuevaContrasenia)
+		{
+			LogicaHeladeria.FiltrarPorUsuarioLogueado();
+			if (usuario.Contrasenia != contraseniaAnterior)
+				throw new Exception("Contraseña anterior no válida.");
+			usuario.Contrasenia = nuevaContrasenia;
+			Datos.Usuario.Editar(usuario);
 		}
 
 		public static void Editar(Entidades.Usuario usuario)
 		{
-			if (Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-				Datos.Usuario.Editar(usuario);
-			else
-				throw new Entidades.Exceptions.ProhibidoException();
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
+			Datos.Usuario.Editar(usuario);
 		}
 
 		public static void Borrar(string nombreUsuario)
 		{
-			if (Usuario.UsuarioActualEstaEnRol(Entidades.TipoUsuario.Supervisor))
-				Datos.Usuario.Borrar(nombreUsuario);
-			else
-				throw new Entidades.Exceptions.ProhibidoException();
+			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
+			Datos.Usuario.Borrar(nombreUsuario);
 		}
 
 		public static bool Existe(string nombreUsuario)

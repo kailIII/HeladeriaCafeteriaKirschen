@@ -26,21 +26,15 @@ namespace Presentacion.Usuario
 
 		protected override void btnAceptar_Click(object sender, EventArgs e)
 		{
-			if (txtNombre.Text != usuario.Contrasenia)
-				MessageBox.Show(this, "Contraseña no válida.");
-			else
+			try
 			{
-				try
-				{
-					usuario.Contrasenia = txtContrasenia.Text;
-					Logica.Usuario.Editar(usuario);
-					MessageBox.Show(this, "Contraseña cambiada.");
-					this.Close();
-				}
-				catch(Exception ex)
-				{
-					MessageBox.Show(this, ex.Message);
-				}
+				Logica.Usuario.CambiarContrasenia(usuario, txtNombre.Text, txtContrasenia.Text);
+				MessageBox.Show(this, "Contraseña cambiada.");
+				this.Close();
+			}
+			catch(Exception ex)
+			{
+				this.MostrarExcepcion(ex);
 			}
 		}
 	}
