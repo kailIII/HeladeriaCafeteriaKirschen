@@ -122,7 +122,7 @@ namespace Presentacion
 
 		private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if(this.MostrarSiNoMensaje("Cerrar Sesión", "¿Está seguro que desea cerrar sesión? Se cerrarán las ventanas abiertas."))
+			if(MdiChildren.Count() == 0 || this.MostrarSiNoMensaje("Cerrar Sesión", "¿Está seguro que desea cerrar sesión? Se cerrarán las ventanas abiertas."))
 			{
 				Logica.Usuario.LogOut();
 				CloseAllToolStripMenuItem_Click(null, null);
