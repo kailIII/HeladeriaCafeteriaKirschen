@@ -19,7 +19,13 @@ namespace Logica
             Datos.Caja.SetLimite(monto);
         }
 
-        public static bool DebeEmitirAlerta()
+		public static double GetLimite()
+		{
+			return Datos.Caja.GetLimite();
+		}
+
+
+		public static bool DebeEmitirAlerta()
         {
             return Datos.Caja.DebeEmitirAlerta();
         }

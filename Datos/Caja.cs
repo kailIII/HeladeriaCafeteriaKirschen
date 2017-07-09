@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Datos
 {
@@ -17,12 +18,17 @@ namespace Datos
 
         public static void SetLimite(double monto)
         {
-			EntidadesCaja.Limite = monto;
+			ConfigurationManager.AppSettings["limiteCaja"] = monto.ToString();
         }
+
+		public static double GetLimite()
+		{
+			return Convert.ToDouble(ConfigurationManager.AppSettings["limiteCaja"]);
+		}
 
         public static bool DebeEmitirAlerta()
         {
-            return EntidadesCaja.Monto >= EntidadesCaja.Limite;
+            return EntidadesCaja.Monto >= GetLimite();
         }
     }
 }

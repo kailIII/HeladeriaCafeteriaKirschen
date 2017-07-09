@@ -18,6 +18,7 @@ namespace Presentacion.Caja
 		{
 			InitializeComponent();
 			this.panelAlerta = panelAlerta;
+			this.nudLimite.Value = Convert.ToDecimal(Logica.Caja.GetLimite());
 		}
 
 		private void btnAceptar_Click(object sender, EventArgs e)
