@@ -37,5 +37,19 @@ namespace Datos
 		{
 			return dbHeladeria.Producto.ToList();
 		}
-	}
+
+        public static void IncrementarStock(string nombreProducto, int cantidad)
+        {
+            var producto = dbHeladeria.Producto.Find(nombreProducto);
+            producto.Stock += cantidad;
+            Editar(producto);
+        }
+
+        public static void DecrementarStock(string nombreProducto, int cantidad)
+        {
+            var producto = dbHeladeria.Producto.Find(nombreProducto);
+            producto.Stock -= cantidad;
+            Editar(producto);
+        }
+    }
 }

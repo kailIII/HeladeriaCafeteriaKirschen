@@ -103,11 +103,23 @@
     <Compile Include="Producto\AltaProducto.Designer.cs">
       <DependentUpon>AltaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\DecrementarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\DecrementarStock.Designer.cs">
+      <DependentUpon>DecrementarStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\EdicionProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Producto\EdicionProducto.Designer.cs">
       <DependentUpon>EdicionProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\IncrementarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\IncrementarStock.Designer.cs">
+      <DependentUpon>IncrementarStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\ListaProductos.cs">
       <SubType>Form</SubType>
@@ -183,6 +195,9 @@
     <EmbeddedResource Include="Producto\EdicionProducto.resx">
       <DependentUpon>EdicionProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\IncrementarStock.resx">
+      <DependentUpon>IncrementarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -201,6 +216,7 @@
     <EmbeddedResource Include="Usuario\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
