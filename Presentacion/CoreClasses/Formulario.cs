@@ -12,7 +12,7 @@ namespace Presentacion.CoreClasses
 {
 	public partial class Formulario : Form
 	{
-		protected Formulario()
+		public Formulario()
 		{
 			InitializeComponent();
 		}

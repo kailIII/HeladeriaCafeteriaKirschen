@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace Datos
 {
@@ -38,18 +39,25 @@ namespace Datos
 			return dbHeladeria.Producto.ToList();
 		}
 
-        public static void IncrementarStock(string nombreProducto, int cantidad)
-        {
-            var producto = dbHeladeria.Producto.Find(nombreProducto);
-            producto.Stock += cantidad;
-            Editar(producto);
-        }
+		public static List<Entidades.Producto> ListarALaVenta()
+		{
+			return (from producto in dbHeladeria.Producto
+					where producto.PrecioVenta != null && producto.PrecioVenta != 0
+					select producto).ToList();
+		}
 
-        public static void DecrementarStock(string nombreProducto, int cantidad)
-        {
-            var producto = dbHeladeria.Producto.Find(nombreProducto);
-            producto.Stock -= cantidad;
-            Editar(producto);
-        }
-    }
+		public static void IncrementarStock(string nombreProducto, int cantidad)
+		{
+			var producto = dbHeladeria.Producto.Find(nombreProducto);
+			producto.Stock += cantidad;
+			Editar(producto);
+		}
+
+		public static void DecrementarStock(string nombreProducto, int cantidad)
+		{
+			var producto = dbHeladeria.Producto.Find(nombreProducto);
+			producto.Stock -= cantidad;
+			Editar(producto);
+		}
+	}
 }

@@ -9,8 +9,14 @@ namespace Entidades
 {
 	public class Pedido
 	{
+		private static int ultimoID = 0;
+
 		public Pedido () {
+			ultimoID++;
+			this.IDPedido = ultimoID;
+			this.FechaHora = DateTime.Now;
 			this.Delivery = false;
+			this.ProductosPedido = new List<ProductoPedido>();
 		}
 
 		[Key]
@@ -21,6 +27,6 @@ namespace Entidades
 		
 		public bool Delivery { get; set; }
 
-		public virtual ICollection<Producto> Productos { get; set; }
+		public virtual ICollection<ProductoPedido> ProductosPedido { get; set; }
 	}
 }

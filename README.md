@@ -9,7 +9,7 @@ Para el desarrollo del sistema, se debe tener instalado:
   + Cliente de Control de versiones GIT: [Link de descarga](https://git-scm.com/download/win).
   + SQL Server 2014: [Link de descarga](https://www.microsoft.com/en-US/download/details.aspx?id=42299).
     + Click en Descargar.
-    + Seleccionar *Express* y *MgmtStudio*, la versión correspondiente (32 o 64 bits) y click en Siguiente.
+    + Seleccionar *Express* y opcionalmente *MgmtStudio*, la versión correspondiente (32 o 64 bits) y click en Siguiente.
 
 ## Instalación local del proyecto (se realiza sólo una vez)
   + Crear una carpeta vacía donde se alojará el proyecto (preferentemente con nombre *HeladeriaCafeteriaKirschen*).
@@ -21,15 +21,8 @@ Para el desarrollo del sistema, se debe tener instalado:
     + ``` git clone https://github.com/SCandelieri/HeladeriaCafeteriaKirschen.git ```
   + Una vez clonado, abrir Visual Studio, e ir a **File -> Open -> Project/Solution...**
   + Se debe abrir la solución. Una solución de Visual Studio es un archivo de extensión .sln que se encarga de contener todos los proyectos y configuraciones. Elegir el archivo *HeladeriaCafeteriaKirschen.sln* ubicado en la carpeta raíz.
-  + Una vez abierta la solución, abrir el archivo *.gitignore* ubicado en la carpeta *Solution Items*.
-  + Agregar la siguiente línea al archivo *.gitignore* y guardar los cambios:
-    + ``` Presentacion/App.config ```
-  + Abrir el archivo *App.config* ubicado en el proyecto *Presentacion* y en el elemento connectionStrings, cambiar el texto **DESKTOP-RACRGHP** por el nombre de su PC.
-  + Guardar los cambios.
-  + Ejecutar el siguiente comando en *Git Bash*:
-	+ ``` git rm -r --cached . ```
-  + Hacer click en **Start** (o **F5**).
-  + Una vez compilado, se debería ver en pantalla una ventana vacía, en blanco, con el nombre *Heladería-Cafetería Kirschen*.
+  + Ya cargada la solución, hacer click en **Start** (o **F5**).
+  + Una vez compilado y ejecutado, debería aparecer en pantalla una ventana vacía, de fondo gris, con el nombre *Heladería-Cafetería Kirschen*.
 
 ## Guardar cambios en repositorio
   + Cada vez que se realiza un cambio importante en el proyecto, se debe realizar un commit. Representa un punto al que se puede volver en caso de que el proyecto se rompa. Se pueden realizar tantos commits como se deseen antes de subir los cambios al repositorio en la nube.

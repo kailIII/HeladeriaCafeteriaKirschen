@@ -12,6 +12,11 @@ namespace Presentacion.Producto
     {
         private Entidades.Producto Producto;
 
+		public IncrementarStock()
+		{
+			InitializeComponent();
+		}
+
         public IncrementarStock(Entidades.Producto producto)
         {
             InitializeComponent();
@@ -40,12 +45,13 @@ namespace Presentacion.Producto
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             RegistrarCambioDeStock(Producto, (int)nudDiferencia.Value);
+			if (Producto.Stock < Producto.StockMinimo) MessageBox.Show(this, "Alerta de stock: El stock del producto " + Producto.NombreProducto + " es bajo.");
             this.Close();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        protected override void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+			base.btnCancelar_Click(sender, e);
         }
     }
 }

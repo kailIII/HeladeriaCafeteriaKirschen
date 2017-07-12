@@ -12,12 +12,19 @@ namespace Presentacion.Producto
 {
 	public partial class EdicionProducto : AltaProducto
 	{
-		private Entidades.Producto producto;
+		protected Entidades.Producto producto;
 
-		public EdicionProducto(Entidades.Producto producto) : base()
+		public EdicionProducto() : base() { }
+
+		public EdicionProducto(Entidades.Producto producto) : this()
 		{
 			this.producto = producto;
 			InitializeComponent();
+			GetProducto();
+		}
+
+		protected void GetProducto()
+		{
 			txtNombreProducto.Text = producto.NombreProducto;
 			txtNombreProducto.Enabled = false;
 			nudPrecioVenta.Value = Convert.ToDecimal(producto.PrecioVenta);

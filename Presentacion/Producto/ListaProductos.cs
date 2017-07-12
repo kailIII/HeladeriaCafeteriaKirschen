@@ -14,8 +14,9 @@ namespace Presentacion.Producto
 	public partial class ListaProductos : CoreClasses.ListaEntidades
 	{
 		private List<Entidades.Producto> productos;
+		private Presentacion.Pedido.AltaPedido frmAltaPedido;
 
-		public ListaProductos()
+		public ListaProductos() : base()
 		{
 			InitializeComponent();
 			btnNuevo.Text = "Nuevo Producto";
@@ -24,9 +25,16 @@ namespace Presentacion.Producto
 			btnAccion3.Click += new System.EventHandler(this.btnVerProducto_Click);
 		}
 
+		public ListaProductos(Presentacion.Pedido.AltaPedido frmAltaPedido) : this()
+		{
+			this.frmAltaPedido = frmAltaPedido;
+			CargarEntidades(null, null);
+		}
+
 		private void btnVerProducto_Click(object sender, EventArgs e)
 		{
-			GetProductosSeleccionados().ForEach(p => ShowNewForm(new VerProducto(p)));
+			GetProductosSeleccionados()
+				.ForEach(p => ShowNewForm((frmAltaPedido == null) ? new VerProducto(p) : new VerProducto(p, frmAltaPedido)));
 		}
 
 		protected override void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -39,7 +47,10 @@ namespace Presentacion.Producto
 
 		protected override void CargarEntidades(object sender, EventArgs e)
 		{
-			productos = Logica.Producto.ToList();
+			if (frmAltaPedido != null)
+				productos = Logica.Producto.ListarALaVenta();
+			else
+				productos = Logica.Producto.ToList();
 			this.txtBuscar.Text = "";
 			this.dgvEntidades.DataSource = productos;
 			this.dgvEntidades.Columns[5].Visible = false;
@@ -78,6 +89,11 @@ namespace Presentacion.Producto
 				productosSeleccionados.Add(productos.Find(p => p.NombreProducto == nombreProducto));
 			}
 			return productosSeleccionados;
+		}
+
+		private void ListaProductos_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			if (frmAltaPedido != null) frmAltaPedido.CargarEntidades();
 		}
 	}
 }

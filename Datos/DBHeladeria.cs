@@ -20,6 +20,8 @@ namespace Datos
 
 		public DbSet<Entidades.Usuario> Usuario { get; set; }
 
+		public DbSet<Entidades.ProductoPedido> ProductoPedido { get; set; }
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);

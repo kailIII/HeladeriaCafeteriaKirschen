@@ -31,8 +31,10 @@
 			this.components = new System.ComponentModel.Container();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.nuevoPedido = new System.Windows.Forms.ToolStripMenuItem();
 			this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnNuevoProducto = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnProductos = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsmiUsuario = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnLogIn = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnLogOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +54,6 @@
 			this.LblAlerta = new System.Windows.Forms.Label();
 			this.TxtEstadoDeCaja = new System.Windows.Forms.TextBox();
 			this.LblEstadoDeCaja = new System.Windows.Forms.Label();
-			this.btnProductos = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.PnlCaja.SuspendLayout();
 			this.PnlAlerta.SuspendLayout();
@@ -61,7 +62,7 @@
 			// 
 			// menuStrip
 			// 
-			this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.menuStrip.BackColor = System.Drawing.Color.White;
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pedidoToolStripMenuItem,
             this.productoToolStripMenuItem,
@@ -75,47 +76,68 @@
 			// 
 			// pedidoToolStripMenuItem
 			// 
+			this.pedidoToolStripMenuItem.BackColor = System.Drawing.Color.White;
+			this.pedidoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoPedido});
+			this.pedidoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
 			this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
 			this.pedidoToolStripMenuItem.Text = "Pedido";
 			// 
+			// nuevoPedido
+			// 
+			this.nuevoPedido.Name = "nuevoPedido";
+			this.nuevoPedido.Size = new System.Drawing.Size(152, 22);
+			this.nuevoPedido.Text = "Nuevo...";
+			this.nuevoPedido.Click += new System.EventHandler(this.nuevoPedido_Click);
+			// 
 			// productoToolStripMenuItem
 			// 
+			this.productoToolStripMenuItem.BackColor = System.Drawing.Color.White;
 			this.productoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevoProducto,
             this.btnProductos});
-			this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.productoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
 			this.productoToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
 			this.productoToolStripMenuItem.Text = "Producto";
 			// 
 			// btnNuevoProducto
 			// 
-			this.btnNuevoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnNuevoProducto.ForeColor = System.Drawing.Color.White;
+			this.btnNuevoProducto.BackColor = System.Drawing.Color.White;
+			this.btnNuevoProducto.ForeColor = System.Drawing.Color.Black;
 			this.btnNuevoProducto.Name = "btnNuevoProducto";
 			this.btnNuevoProducto.Size = new System.Drawing.Size(152, 22);
 			this.btnNuevoProducto.Text = "Nuevo...";
 			this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
 			// 
+			// btnProductos
+			// 
+			this.btnProductos.BackColor = System.Drawing.Color.White;
+			this.btnProductos.ForeColor = System.Drawing.Color.Black;
+			this.btnProductos.Name = "btnProductos";
+			this.btnProductos.Size = new System.Drawing.Size(152, 22);
+			this.btnProductos.Text = "Productos...";
+			this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+			// 
 			// tsmiUsuario
 			// 
-			this.tsmiUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.tsmiUsuario.BackColor = System.Drawing.Color.White;
 			this.tsmiUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnLogIn,
             this.btnLogOut,
             this.btnCambiarContrasenia,
             this.btnNuevoUsuario,
             this.btnUsuarios});
-			this.tsmiUsuario.ForeColor = System.Drawing.Color.White;
+			this.tsmiUsuario.ForeColor = System.Drawing.Color.Black;
 			this.tsmiUsuario.Name = "tsmiUsuario";
 			this.tsmiUsuario.Size = new System.Drawing.Size(59, 20);
 			this.tsmiUsuario.Text = "Usuario";
 			// 
 			// btnLogIn
 			// 
-			this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnLogIn.ForeColor = System.Drawing.Color.White;
+			this.btnLogIn.BackColor = System.Drawing.Color.White;
+			this.btnLogIn.ForeColor = System.Drawing.Color.Black;
 			this.btnLogIn.Name = "btnLogIn";
 			this.btnLogIn.Size = new System.Drawing.Size(180, 22);
 			this.btnLogIn.Text = "Log In";
@@ -123,8 +145,8 @@
 			// 
 			// btnLogOut
 			// 
-			this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnLogOut.ForeColor = System.Drawing.Color.White;
+			this.btnLogOut.BackColor = System.Drawing.Color.White;
+			this.btnLogOut.ForeColor = System.Drawing.Color.Black;
 			this.btnLogOut.Name = "btnLogOut";
 			this.btnLogOut.Size = new System.Drawing.Size(180, 22);
 			this.btnLogOut.Text = "Log Out";
@@ -132,8 +154,8 @@
 			// 
 			// btnCambiarContrasenia
 			// 
-			this.btnCambiarContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnCambiarContrasenia.ForeColor = System.Drawing.Color.White;
+			this.btnCambiarContrasenia.BackColor = System.Drawing.Color.White;
+			this.btnCambiarContrasenia.ForeColor = System.Drawing.Color.Black;
 			this.btnCambiarContrasenia.Name = "btnCambiarContrasenia";
 			this.btnCambiarContrasenia.Size = new System.Drawing.Size(180, 22);
 			this.btnCambiarContrasenia.Text = "Cambiar contraseña";
@@ -141,8 +163,8 @@
 			// 
 			// btnNuevoUsuario
 			// 
-			this.btnNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnNuevoUsuario.ForeColor = System.Drawing.Color.White;
+			this.btnNuevoUsuario.BackColor = System.Drawing.Color.White;
+			this.btnNuevoUsuario.ForeColor = System.Drawing.Color.Black;
 			this.btnNuevoUsuario.Name = "btnNuevoUsuario";
 			this.btnNuevoUsuario.Size = new System.Drawing.Size(180, 22);
 			this.btnNuevoUsuario.Text = "Nuevo...";
@@ -150,8 +172,8 @@
 			// 
 			// btnUsuarios
 			// 
-			this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+			this.btnUsuarios.BackColor = System.Drawing.Color.White;
+			this.btnUsuarios.ForeColor = System.Drawing.Color.Black;
 			this.btnUsuarios.Name = "btnUsuarios";
 			this.btnUsuarios.Size = new System.Drawing.Size(180, 22);
 			this.btnUsuarios.Text = "Usuarios...";
@@ -159,21 +181,21 @@
 			// 
 			// tsmiCaja
 			// 
-			this.tsmiCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.tsmiCaja.BackColor = System.Drawing.Color.White;
 			this.tsmiCaja.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.depositoToolStripMenuItem,
             this.extraccionToolStripMenuItem,
             this.movimientosToolStripMenuItem,
             this.limiteDeAlertaToolStripMenuItem});
-			this.tsmiCaja.ForeColor = System.Drawing.Color.White;
+			this.tsmiCaja.ForeColor = System.Drawing.Color.Black;
 			this.tsmiCaja.Name = "tsmiCaja";
 			this.tsmiCaja.Size = new System.Drawing.Size(42, 20);
 			this.tsmiCaja.Text = "Caja";
 			// 
 			// depositoToolStripMenuItem
 			// 
-			this.depositoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.depositoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.depositoToolStripMenuItem.BackColor = System.Drawing.Color.White;
+			this.depositoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.depositoToolStripMenuItem.Name = "depositoToolStripMenuItem";
 			this.depositoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
 			this.depositoToolStripMenuItem.Text = "Depósito";
@@ -181,8 +203,8 @@
 			// 
 			// extraccionToolStripMenuItem
 			// 
-			this.extraccionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.extraccionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.extraccionToolStripMenuItem.BackColor = System.Drawing.Color.White;
+			this.extraccionToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.extraccionToolStripMenuItem.Name = "extraccionToolStripMenuItem";
 			this.extraccionToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
 			this.extraccionToolStripMenuItem.Text = "Extracción";
@@ -190,8 +212,8 @@
 			// 
 			// movimientosToolStripMenuItem
 			// 
-			this.movimientosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.movimientosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.movimientosToolStripMenuItem.BackColor = System.Drawing.Color.White;
+			this.movimientosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
 			this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
 			this.movimientosToolStripMenuItem.Text = "Movimientos";
@@ -199,8 +221,8 @@
 			// 
 			// limiteDeAlertaToolStripMenuItem
 			// 
-			this.limiteDeAlertaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.limiteDeAlertaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+			this.limiteDeAlertaToolStripMenuItem.BackColor = System.Drawing.Color.White;
+			this.limiteDeAlertaToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.limiteDeAlertaToolStripMenuItem.Name = "limiteDeAlertaToolStripMenuItem";
 			this.limiteDeAlertaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
 			this.limiteDeAlertaToolStripMenuItem.Text = "Límite de Alerta...";
@@ -244,7 +266,7 @@
 			// 
 			// LblAlerta
 			// 
-			this.LblAlerta.ForeColor = System.Drawing.Color.White;
+			this.LblAlerta.ForeColor = System.Drawing.Color.Black;
 			this.LblAlerta.Location = new System.Drawing.Point(41, 3);
 			this.LblAlerta.Name = "LblAlerta";
 			this.LblAlerta.Size = new System.Drawing.Size(142, 32);
@@ -254,10 +276,10 @@
 			// 
 			// TxtEstadoDeCaja
 			// 
-			this.TxtEstadoDeCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+			this.TxtEstadoDeCaja.BackColor = System.Drawing.Color.White;
 			this.TxtEstadoDeCaja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.TxtEstadoDeCaja.Enabled = false;
-			this.TxtEstadoDeCaja.ForeColor = System.Drawing.Color.White;
+			this.TxtEstadoDeCaja.ForeColor = System.Drawing.Color.Black;
 			this.TxtEstadoDeCaja.Location = new System.Drawing.Point(87, 11);
 			this.TxtEstadoDeCaja.Name = "TxtEstadoDeCaja";
 			this.TxtEstadoDeCaja.ReadOnly = true;
@@ -267,7 +289,7 @@
 			// 
 			// LblEstadoDeCaja
 			// 
-			this.LblEstadoDeCaja.ForeColor = System.Drawing.Color.White;
+			this.LblEstadoDeCaja.ForeColor = System.Drawing.Color.Black;
 			this.LblEstadoDeCaja.Location = new System.Drawing.Point(3, 3);
 			this.LblEstadoDeCaja.Name = "LblEstadoDeCaja";
 			this.LblEstadoDeCaja.Size = new System.Drawing.Size(78, 36);
@@ -275,20 +297,11 @@
 			this.LblEstadoDeCaja.Text = "Estado de caja";
 			this.LblEstadoDeCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// btnProductos
-			// 
-			this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnProductos.ForeColor = System.Drawing.Color.White;
-			this.btnProductos.Name = "btnProductos";
-			this.btnProductos.Size = new System.Drawing.Size(152, 22);
-			this.btnProductos.Text = "Productos...";
-			this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-			// 
 			// MenuPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(632, 453);
 			this.Controls.Add(this.PnlCaja);
 			this.Controls.Add(this.menuStrip);
@@ -338,6 +351,7 @@
 		private System.Windows.Forms.ToolStripMenuItem limiteDeAlertaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem btnNuevoProducto;
 		private System.Windows.Forms.ToolStripMenuItem btnProductos;
+		private System.Windows.Forms.ToolStripMenuItem nuevoPedido;
 	}
 }
 

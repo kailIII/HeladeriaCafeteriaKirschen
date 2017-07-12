@@ -42,5 +42,21 @@ namespace Presentacion.Producto
 				this.MostrarExcepcion(ex);
 			}
 		}
+
+		protected override void btnCancelar_Click(object sender, EventArgs e)
+		{
+			base.btnCancelar_Click(sender, e);
+		}
+
+		private void cboTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if ((Entidades.TipoProducto)cboTipoProducto.SelectedItem == Entidades.TipoProducto.Balde)
+			{
+				nudPrecioVenta.Enabled = false;
+				nudPrecioVenta.Value = 0;
+			}
+			else
+				nudPrecioVenta.Enabled = true;
+		}
 	}
 }

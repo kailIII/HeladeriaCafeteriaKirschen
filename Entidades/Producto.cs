@@ -24,6 +24,6 @@ namespace Entidades
 
 		public TipoProducto Tipo { get; set; }
 
-		public virtual ICollection<Pedido> Pedidos { get; set; }
+		public virtual ICollection<ProductoPedido> PedidosProducto { get; set; }
 	}
 }

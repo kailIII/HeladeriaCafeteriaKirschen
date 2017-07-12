@@ -26,6 +26,10 @@ namespace Presentacion.Usuario
 				Logica.Usuario.LogIn(usuario);
 				this.Close();
 			}
+			catch (Entidades.Exceptions.UsuarioNoEncontradoException ex)
+			{
+				this.MostrarExcepcion(ex);
+			}
 			catch (Exception ex)
 			{
 				this.MostrarExcepcion(ex);

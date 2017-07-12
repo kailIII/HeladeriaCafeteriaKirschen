@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace Logica
 {
@@ -25,41 +26,34 @@ namespace Logica
 			return Datos.Producto.Buscar(nombreProducto);
 		}
 
-        public static void Borrar(string nombreProducto)
+		public static void Borrar(string nombreProducto)
 		{
 			LogicaHeladeria.FiltrarUsuarioActualPorRol(Entidades.TipoUsuario.Supervisor);
 			Datos.Producto.Borrar(nombreProducto);
 		}
 
-        public static void IncrementarStock(string nombreProducto, int cantidad)
-        {
-            if (cantidad < 1)
-            {
-                throw new Exception("La cantidad a incrementar debe ser mayor o igual a 1");
-            }
+		public static void IncrementarStock(string nombreProducto, int cantidad)
+		{
+			LogicaHeladeria.ControlarCantidadNoNegativa(cantidad);
+			Datos.Producto.IncrementarStock(nombreProducto, cantidad);
+		}
 
-            Datos.Producto.IncrementarStock(nombreProducto, cantidad);
-        }
+		public static void DecrementarStock(string nombreProducto, int cantidad)
+		{
+			LogicaHeladeria.ControlarCantidadNoNegativa(cantidad);
+			var producto = Buscar(nombreProducto);
+			LogicaHeladeria.ControlarCantidadNoSuperaStock(producto, cantidad);
+			Datos.Producto.DecrementarStock(nombreProducto, cantidad);
+		}
 
-        public static void DecrementarStock(string nombreProducto, int cantidad)
-        {
-            if (cantidad < 1)
-            {
-                throw new Exception("La cantidad a decrementar debe ser mayor o igual a 1");
-            }
-
-            var producto = Buscar(nombreProducto);
-            if (cantidad > producto.Stock)
-            {
-                throw new Exception("La cantidad supera al stock actual");
-            }
-
-            Datos.Producto.DecrementarStock(nombreProducto, cantidad);
-        }
-
-        public static List<Entidades.Producto> ToList()
+		public static List<Entidades.Producto> ToList()
 		{
 			return Datos.Producto.ToList();
+		}
+
+		public static List<Entidades.Producto> ListarALaVenta()
+		{
+			return Datos.Producto.ListarALaVenta();
 		}
 	}
 }

@@ -39,6 +39,7 @@ namespace Presentacion
 			{
 				btnLogIn.Visible = false;
 				btnLogOut.Visible = true;
+				nuevoPedido.Visible = true;
 				btnCambiarContrasenia.Visible = true;
 				tsmiUsuario.Text = Logica.Usuario.GetUsuarioActual().NombreUsuario;
 			}
@@ -46,6 +47,7 @@ namespace Presentacion
 			{
 				btnLogIn.Visible = true;
 				btnLogOut.Visible = false;
+				nuevoPedido.Visible = false;
 				btnCambiarContrasenia.Visible = false;
 				tsmiUsuario.Text = "Usuario";
 			}
@@ -165,6 +167,11 @@ namespace Presentacion
 		private void btnProductos_Click(object sender, EventArgs e)
 		{
 			ShowNewForm(new Producto.ListaProductos());
+		}
+
+		private void nuevoPedido_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Pedido.AltaPedido());
 		}
 	}
 }

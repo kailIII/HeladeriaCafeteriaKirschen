@@ -97,6 +97,18 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\AltaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\AltaPedido.Designer.cs">
+      <DependentUpon>AltaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoPedido\AltaProductoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductoPedido\AltaProductoPedido.Designer.cs">
+      <DependentUpon>AltaProductoPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\AltaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +201,12 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\AltaPedido.resx">
+      <DependentUpon>AltaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoPedido\AltaProductoPedido.resx">
+      <DependentUpon>AltaProductoPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\AltaProducto.resx">
       <DependentUpon>AltaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +215,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\IncrementarStock.resx">
       <DependentUpon>IncrementarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\ListaProductos.resx">
+      <DependentUpon>ListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\VerProducto.resx">
+      <DependentUpon>VerProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -216,7 +240,6 @@
     <EmbeddedResource Include="Usuario\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
