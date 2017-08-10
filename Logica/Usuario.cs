@@ -48,10 +48,7 @@ namespace Logica
 		public static void CambiarContrasenia(Entidades.Usuario usuario, string contraseniaAnterior, string nuevaContrasenia)
 		{
 			LogicaHeladeria.FiltrarPorUsuarioLogueado();
-			if (usuario.Contrasenia != contraseniaAnterior)
-				throw new Exception("Contraseña anterior no válida.");
-			usuario.Contrasenia = nuevaContrasenia;
-			Datos.Usuario.Editar(usuario);
+			Datos.Usuario.CambiarContrasenia(usuario, contraseniaAnterior, nuevaContrasenia);
 		}
 
 		public static void Editar(Entidades.Usuario usuario)

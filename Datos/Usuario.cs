@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 
 namespace Datos
 {
@@ -14,17 +15,14 @@ namespace Datos
 
 		public static void Nuevo(Entidades.Usuario usuario)
 		{
+			usuario.Contrasenia = MD5Hash.Get(usuario.Contrasenia);
 			dbHeladeria.Usuario.Add(usuario);
 			dbHeladeria.SaveChanges();
 		}
 
 		public static void LogIn(Entidades.Usuario usuario)
 		{
-			Entidades.Usuario usuarioBuscado = Usuario.Buscar(usuario.NombreUsuario, usuario.Contrasenia);
-			if (usuarioBuscado != null)
-				usuarioActual = usuarioBuscado;
-			else
-				throw new Entidades.Exceptions.UsuarioNoEncontradoException();
+			usuarioActual = Usuario.Buscar(usuario.NombreUsuario, usuario.Contrasenia);
 		}
 
 		public static void LogOut()
@@ -39,9 +37,7 @@ namespace Datos
 
 		public static bool UsuarioActualEstaEnRol(Entidades.TipoUsuario rol)
 		{
-			if (usuarioActual == null)
-				return false;
-			return usuarioActual.Rol == rol;
+			return UsuarioActualEstaLogueado() && usuarioActual.Rol == rol;
 		}
 
 		public static bool UsuarioActualEstaLogueado()
@@ -59,6 +55,14 @@ namespace Datos
 		{
 			dbHeladeria.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
 			dbHeladeria.SaveChanges();
+		}
+
+		public static void CambiarContrasenia(Entidades.Usuario usuario, string contraseniaAnterior, string nuevaContrasenia)
+		{
+			if (!MD5Hash.Compare(contraseniaAnterior, usuario.Contrasenia))
+				throw new Entidades.Exceptions.ContraseniaErroneaException();
+			usuario.Contrasenia = MD5Hash.Get(nuevaContrasenia);
+			Editar(usuario);
 		}
 
 		public static void Borrar(string nombreUsuario)
@@ -79,24 +83,18 @@ namespace Datos
 
 		public static Entidades.Usuario Buscar(string nombreUsuario)
 		{
-			return dbHeladeria.Usuario.Find(nombreUsuario);
+			Entidades.Usuario usuario = dbHeladeria.Usuario.Find(nombreUsuario);
+			if (usuario == null)
+				throw new Entidades.Exceptions.UsuarioNoEncontradoException();
+			return usuario;
 		}
 
 		public static Entidades.Usuario Buscar(string nombreUsuario, string contrasenia)
 		{
-			try
-			{
-				var query =
-					from usuarioBuscado in dbHeladeria.Usuario
-					where nombreUsuario == usuarioBuscado.NombreUsuario
-						&& contrasenia == usuarioBuscado.Contrasenia
-					select usuarioBuscado;
-				return query.Single();
-			}
-			catch (InvalidOperationException)
-			{
-				return null;
-			}
+			Entidades.Usuario usuario = Buscar(nombreUsuario);
+			if (!MD5Hash.Compare(contrasenia, usuario.Contrasenia))
+				throw new Entidades.Exceptions.ContraseniaErroneaException();
+			return usuario;
 		}
 
 		public static List<Entidades.Usuario> ToList()

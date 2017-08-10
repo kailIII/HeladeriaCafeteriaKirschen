@@ -55,6 +55,7 @@
     <Compile Include="Caja.cs" />
     <Compile Include="DBHeladeria.cs" />
     <Compile Include="DBHeladeriaInitializer.cs" />
+    <Compile Include="MD5Hash.cs" />
     <Compile Include="MovimientoDeCaja.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Producto.cs" />

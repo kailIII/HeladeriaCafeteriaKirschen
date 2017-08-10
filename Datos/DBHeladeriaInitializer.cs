@@ -14,8 +14,7 @@ namespace Datos
 			base.Seed(context);
 			Entidades.Usuario admin = new Entidades.Usuario("admin", "admin");
 			admin.Rol = Entidades.TipoUsuario.Supervisor;
-			context.Usuario.Add(admin);
-			context.SaveChanges();
+			Datos.Usuario.Nuevo(admin);
 		}
 	}
 }

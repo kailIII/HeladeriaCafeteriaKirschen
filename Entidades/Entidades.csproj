@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Caja.cs" />
     <Compile Include="Exceptions\CantidadNegativaException.cs" />
+    <Compile Include="Exceptions\ContraseniaErroneaException.cs" />
     <Compile Include="Exceptions\ProhibidoException.cs" />
     <Compile Include="Exceptions\StockNuloException.cs" />
     <Compile Include="Exceptions\UsuarioNoEncontradoException.cs" />
