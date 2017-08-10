@@ -16,5 +16,10 @@ namespace Datos
 			dbHeladeria.Pedido.Add(pedido);
 			dbHeladeria.SaveChanges();
 		}
+
+		public static int GetNewID()
+		{
+			return dbHeladeria.Pedido.Max(p => p.IDPedido) + 1;
+		}
 	}
 }

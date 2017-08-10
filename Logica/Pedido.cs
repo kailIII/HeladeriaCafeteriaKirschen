@@ -22,5 +22,10 @@ namespace Logica
 			}
 			Datos.Pedido.Nuevo(pedido);
 		}
+
+		public static int GetNewID()
+		{
+			return Datos.Pedido.GetNewID();
+		}
 	}
 }

@@ -17,6 +17,7 @@ namespace Presentacion.Pedido
 		{
 			InitializeComponent();
 			pedido = new Entidades.Pedido();
+			pedido.IDPedido = Logica.Pedido.GetNewID();
 			SetControls();
 			CargarEntidades();
 		}
