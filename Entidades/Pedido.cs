@@ -27,6 +27,16 @@ namespace Entidades
 		
 		public bool Delivery { get; set; }
 
+		public bool Efectivo { get; set; }
+
 		public virtual ICollection<ProductoPedido> ProductosPedido { get; set; }
+
+		public virtual double Monto {
+			get
+			{
+				return ProductosPedido.Aggregate(0.0d, (acum, p) =>
+					acum + Convert.ToDouble(p.Cantidad) * Convert.ToDouble(p.Producto.PrecioVenta));
+			}
+		}
 	}
 }

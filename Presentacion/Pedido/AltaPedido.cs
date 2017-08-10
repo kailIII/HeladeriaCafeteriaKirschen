@@ -66,7 +66,7 @@ namespace Presentacion.Pedido
 				if (pedido.ProductosPedido.Count > 0)
 				{
 					Logica.Pedido.Nuevo(pedido);
-					MessageBox.Show(this, "Pedido creado exitosamente. Total: $" + CalcularTotalPedido());
+					MessageBox.Show(this, "Pedido creado exitosamente. Total: $" + pedido.Monto);
 					this.Close();
 				}
 				else MessageBox.Show(this, "Debe agregar productos al pedido para continuar.");
@@ -75,12 +75,6 @@ namespace Presentacion.Pedido
 			{
 				MostrarExcepcion(ex);
 			}
-		}
-
-		private double CalcularTotalPedido()
-		{
-			return pedido.ProductosPedido.Aggregate(0.0d, (acum, p) =>
-				acum + Convert.ToDouble(p.Cantidad)*Convert.ToDouble(p.Producto.PrecioVenta));
 		}
 
 		private void DecrementarStocks()
@@ -98,6 +92,7 @@ namespace Presentacion.Pedido
 			pedido.IDPedido = Convert.ToInt32(nudIDPedido.Value);
 			pedido.FechaHora = dtpFecha.Value;
 			pedido.Delivery = cbxDelivery.Checked;
+			pedido.Efectivo = cbxEfectivo.Checked;
 		}
 
 		protected override void btnCancelar_Click(object sender, EventArgs e)

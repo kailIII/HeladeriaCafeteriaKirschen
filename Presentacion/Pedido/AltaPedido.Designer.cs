@@ -39,6 +39,7 @@
 			this.lblProductos = new System.Windows.Forms.Label();
 			this.btnAgregarProductos = new System.Windows.Forms.Button();
 			this.cbxDelivery = new System.Windows.Forms.CheckBox();
+			this.cbxEfectivo = new System.Windows.Forms.CheckBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudIDPedido)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -62,6 +63,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.lblProductos, 0, 5);
 			this.tableLayoutPanel1.Controls.Add(this.btnAgregarProductos, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.cbxDelivery, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.cbxEfectivo, 1, 4);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 8;
@@ -73,6 +75,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.581297F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.93092F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.581297F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(418, 343);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
@@ -189,6 +192,17 @@
 			this.cbxDelivery.Text = "¿Delivery?";
 			this.cbxDelivery.UseVisualStyleBackColor = true;
 			// 
+			// cbxEfectivo
+			// 
+			this.cbxEfectivo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.cbxEfectivo.AutoSize = true;
+			this.cbxEfectivo.Location = new System.Drawing.Point(212, 135);
+			this.cbxEfectivo.Name = "cbxEfectivo";
+			this.cbxEfectivo.Size = new System.Drawing.Size(77, 17);
+			this.cbxEfectivo.TabIndex = 10;
+			this.cbxEfectivo.Text = "¿Efectivo?";
+			this.cbxEfectivo.UseVisualStyleBackColor = true;
+			// 
 			// AltaPedido
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,5 +231,6 @@
 		private System.Windows.Forms.Button btnAceptar;
 		private System.Windows.Forms.Button btnCancelar;
 		private System.Windows.Forms.CheckBox cbxDelivery;
+		private System.Windows.Forms.CheckBox cbxEfectivo;
 	}
 }
