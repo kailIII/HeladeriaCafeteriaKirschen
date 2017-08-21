@@ -173,5 +173,10 @@ namespace Presentacion
 		{
 			ShowNewForm(new Pedido.AltaPedido());
 		}
+
+		private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ShowNewForm(new Pedido.ListaPedidos());
+		}
 	}
 }

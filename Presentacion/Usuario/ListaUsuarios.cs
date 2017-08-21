@@ -21,6 +21,7 @@ namespace Presentacion.Usuario
 			this.Text = "Listado de Usuarios";
 			btnAccion3.Text = "Cambiar Rol Seleccionados";
 			btnAccion3.Click += new System.EventHandler(this.btnCambiarRol_Click);
+			CargarEntidades(null, null);
 		}
 
 		protected override void CargarEntidades(object sender, EventArgs e)

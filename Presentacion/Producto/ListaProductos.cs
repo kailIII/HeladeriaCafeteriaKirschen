@@ -23,6 +23,7 @@ namespace Presentacion.Producto
 			this.Text = "Listado de Productos";
 			btnAccion3.Text = "Ver Producto";
 			btnAccion3.Click += new System.EventHandler(this.btnVerProducto_Click);
+			CargarEntidades(null, null);
 		}
 
 		public ListaProductos(Presentacion.Pedido.AltaPedido frmAltaPedido) : this()

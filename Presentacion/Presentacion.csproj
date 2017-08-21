@@ -103,6 +103,12 @@
     <Compile Include="Pedido\AltaPedido.Designer.cs">
       <DependentUpon>AltaPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\ListaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\ListaPedidos.Designer.cs">
+      <DependentUpon>ListaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductoPedido\AltaProductoPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedido\AltaPedido.resx">
       <DependentUpon>AltaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\ListaPedidos.resx">
+      <DependentUpon>ListaPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductoPedido\AltaProductoPedido.resx">
       <DependentUpon>AltaProductoPedido.cs</DependentUpon>

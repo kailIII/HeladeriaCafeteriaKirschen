@@ -15,7 +15,6 @@ namespace Presentacion.CoreClasses
 		public ListaEntidades()
 		{
 			InitializeComponent();
-			CargarEntidades(null, null);
 		}
 
 		protected virtual void txtBuscar_TextChanged(object sender, EventArgs e) { }

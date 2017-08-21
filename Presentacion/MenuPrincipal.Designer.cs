@@ -54,6 +54,7 @@
 			this.LblAlerta = new System.Windows.Forms.Label();
 			this.TxtEstadoDeCaja = new System.Windows.Forms.TextBox();
 			this.LblEstadoDeCaja = new System.Windows.Forms.Label();
+			this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.PnlCaja.SuspendLayout();
 			this.PnlAlerta.SuspendLayout();
@@ -78,7 +79,8 @@
 			// 
 			this.pedidoToolStripMenuItem.BackColor = System.Drawing.Color.White;
 			this.pedidoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoPedido});
+            this.nuevoPedido,
+            this.pedidosToolStripMenuItem});
 			this.pedidoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
 			this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
 			this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
@@ -107,7 +109,7 @@
 			this.btnNuevoProducto.BackColor = System.Drawing.Color.White;
 			this.btnNuevoProducto.ForeColor = System.Drawing.Color.Black;
 			this.btnNuevoProducto.Name = "btnNuevoProducto";
-			this.btnNuevoProducto.Size = new System.Drawing.Size(152, 22);
+			this.btnNuevoProducto.Size = new System.Drawing.Size(137, 22);
 			this.btnNuevoProducto.Text = "Nuevo...";
 			this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
 			// 
@@ -116,7 +118,7 @@
 			this.btnProductos.BackColor = System.Drawing.Color.White;
 			this.btnProductos.ForeColor = System.Drawing.Color.Black;
 			this.btnProductos.Name = "btnProductos";
-			this.btnProductos.Size = new System.Drawing.Size(152, 22);
+			this.btnProductos.Size = new System.Drawing.Size(137, 22);
 			this.btnProductos.Text = "Productos...";
 			this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
 			// 
@@ -297,6 +299,13 @@
 			this.LblEstadoDeCaja.Text = "Estado de caja";
 			this.LblEstadoDeCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// pedidosToolStripMenuItem
+			// 
+			this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+			this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.pedidosToolStripMenuItem.Text = "Pedidos...";
+			this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
+			// 
 			// MenuPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +361,7 @@
 		private System.Windows.Forms.ToolStripMenuItem btnNuevoProducto;
 		private System.Windows.Forms.ToolStripMenuItem btnProductos;
 		private System.Windows.Forms.ToolStripMenuItem nuevoPedido;
+		private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
 	}
 }
 

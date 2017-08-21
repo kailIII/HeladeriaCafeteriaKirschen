@@ -29,5 +29,12 @@ namespace Datos
                 return 1;
             }
 		}
+
+		public static List<Entidades.Pedido> ToList(DateTime fechaDesde, DateTime fechaHasta)
+		{
+			return (from p in dbHeladeria.Pedido
+					where p.FechaHora >= fechaDesde && p.FechaHora <= fechaHasta
+					select p).ToList();
+		}
 	}
 }

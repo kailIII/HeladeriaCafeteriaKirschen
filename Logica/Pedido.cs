@@ -27,5 +27,10 @@ namespace Logica
 		{
 			return Datos.Pedido.GetNewID();
 		}
+
+		public static List<Entidades.Pedido> ToList(DateTime from, DateTime to)
+		{
+			return Datos.Pedido.ToList(from, to);
+		}
 	}
 }
