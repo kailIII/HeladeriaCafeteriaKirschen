@@ -19,7 +19,15 @@ namespace Datos
 
 		public static int GetNewID()
 		{
-			return dbHeladeria.Pedido.Max(p => p.IDPedido) + 1;
+            try
+            {
+                int? maxNum = dbHeladeria.Pedido.Max(p => p.IDPedido);
+                return (maxNum == null) ? 1 : (Convert.ToInt32(maxNum) + 1);
+            }
+            catch (InvalidOperationException)
+            {
+                return 1;
+            }
 		}
 	}
 }
