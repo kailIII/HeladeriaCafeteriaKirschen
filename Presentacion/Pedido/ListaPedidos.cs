@@ -33,13 +33,20 @@ namespace Presentacion.Pedido
 
 		private void BtnGuardarExcel_Click(object sender, EventArgs e)
 		{
-			
+			try
+			{
+				string nombre = Logica.Pedido.GuardarAExcel(pedidos, System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+				MessageBox.Show("El archivo de nombre " + nombre + " se guardo exitosamente en Documentos.");
+			}
+			catch(Exception ex)
+			{
+				this.MostrarExcepcion(ex);
+			}
 		}
 
 		protected override void CargarEntidades(object sender, EventArgs e)
 		{
-			pedidos = Logica.Pedido.ToList(dtpDesde.Value, dtpHasta.Value);
-			this.txtBuscar.Text = "";
+			pedidos = (dtpDesde.Value <= dtpHasta.Value) ? Logica.Pedido.ToList(dtpDesde.Value, dtpHasta.Value) : new List<Entidades.Pedido>();
 			this.dgvEntidades.DataSource = pedidos;
 			this.dgvEntidades.Columns[4].Visible = false;
 		}

@@ -32,5 +32,10 @@ namespace Logica
 		{
 			return Datos.Pedido.ToList(from, to);
 		}
+
+		public static string GuardarAExcel(List<Entidades.Pedido> pedidos, string path)
+		{
+			return Datos.Pedido.GuardarAExcel(pedidos, path);
+		}
 	}
 }
