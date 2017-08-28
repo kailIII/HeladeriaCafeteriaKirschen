@@ -16,6 +16,9 @@ namespace Presentacion.Producto
 		{
 			InitializeComponent();
 			cboTipoProducto.DataSource = Enum.GetValues(typeof(Entidades.TipoProducto));
+			nudPrecioVenta.Maximum = long.MaxValue;
+			nudStock.Maximum = int.MaxValue;
+			nudStockMinimo.Maximum = int.MaxValue;
 		}
 
 		protected void SetProducto(Entidades.Producto producto)

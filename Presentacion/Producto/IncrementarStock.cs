@@ -15,6 +15,7 @@ namespace Presentacion.Producto
 		public IncrementarStock()
 		{
 			InitializeComponent();
+			nudDiferencia.Maximum = int.MaxValue;
 		}
 
         public IncrementarStock(Entidades.Producto producto)

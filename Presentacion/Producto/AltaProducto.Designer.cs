@@ -93,11 +93,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tableLayoutPanel1.SetColumnSpan(this.nudStockMinimo, 2);
 			this.nudStockMinimo.Location = new System.Drawing.Point(3, 185);
-			this.nudStockMinimo.Maximum = new decimal(new int[] {
-            -469762049,
-            -590869294,
-            5421010,
-            0});
 			this.nudStockMinimo.Name = "nudStockMinimo";
 			this.nudStockMinimo.Size = new System.Drawing.Size(229, 20);
 			this.nudStockMinimo.TabIndex = 9;
@@ -108,11 +103,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tableLayoutPanel1.SetColumnSpan(this.nudStock, 2);
 			this.nudStock.Location = new System.Drawing.Point(3, 133);
-			this.nudStock.Maximum = new decimal(new int[] {
-            -469762049,
-            -590869294,
-            5421010,
-            0});
 			this.nudStock.Name = "nudStock";
 			this.nudStock.Size = new System.Drawing.Size(229, 20);
 			this.nudStock.TabIndex = 8;

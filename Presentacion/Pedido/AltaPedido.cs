@@ -16,6 +16,7 @@ namespace Presentacion.Pedido
 		public AltaPedido()
 		{
 			InitializeComponent();
+			nudIDPedido.Maximum = int.MaxValue;
 			pedido = new Entidades.Pedido();
 			pedido.IDPedido = Logica.Pedido.GetNewID();
 			SetControls();

@@ -16,6 +16,7 @@ namespace Presentacion.ProductoPedido
 		public AltaProductoPedido()
 		{
 			InitializeComponent();
+			nudCantidad.Maximum = int.MaxValue;
 		}
 
 		public AltaProductoPedido(Entidades.Producto producto, Entidades.Pedido pedido, Pedido.AltaPedido frmAltaPedido)
